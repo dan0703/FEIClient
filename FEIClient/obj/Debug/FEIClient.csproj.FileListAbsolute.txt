@@ -1,0 +1,15 @@
+C:\Users\danse\source\repos\FEIClient\FEIClient\bin\Debug\FEIClient.exe.config
+C:\Users\danse\source\repos\FEIClient\FEIClient\bin\Debug\FEIClient.exe
+C:\Users\danse\source\repos\FEIClient\FEIClient\bin\Debug\FEIClient.pdb
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.csproj.AssemblyReference.cache
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LogIn.g.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\App.g.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient_MarkupCompile.cache
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient_MarkupCompile.lref
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LogIn.baml
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.g.resources
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.Properties.Resources.resources
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.csproj.GenerateResource.cache
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.csproj.CoreCompileInputs.cache
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.exe
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.pdb
