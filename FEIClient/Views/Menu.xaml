@@ -36,7 +36,7 @@
             <Label Content="Tutor Academico" HorizontalAlignment="Left" Margin="51,736,0,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Width="419"/>
             <Label x:Name="Label_AcademicTutor" Content="" HorizontalAlignment="Left" Margin="51,794,0,0" VerticalAlignment="Top" FontSize="36" Width="1004"/>
             <Button x:Name="Button_LogOut" Content="Cerrar Sesion" HorizontalAlignment="Left" Margin="51,986,0,0" VerticalAlignment="Top" Background="#FFFF6666" Foreground="White" FontSize="24" Height="57" Width="209" FontWeight="Bold" Click="Button_LogOut_Click"/>
-            <Button x:Name="Button_AppointmentRequest" Content="Solicitar Turno" HorizontalAlignment="Left" Margin="1055,322,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="White" FontSize="48" Height="135" Width="404">
+            <Button x:Name="Button_AppointmentRequest" Content="Solicitar Turno" HorizontalAlignment="Left" Margin="1055,322,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="White" FontSize="48" Height="135" Width="404" Click="Button_AppointmentRequest_Click">
                 <Button.Template >
                     <ControlTemplate TargetType="{x:Type Button}" >
                         <Border  Background="#FFFF9900"  CornerRadius="15">
@@ -45,7 +45,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Button_LeaveShift" Content="Abandonar Turno" HorizontalAlignment="Left" Margin="1055,549,0,0" VerticalAlignment="Top"  Foreground="White" FontSize="48" Height="135" Width="404">
+            <Button x:Name="Button_LeaveShift" Content="Abandonar Turno" HorizontalAlignment="Left" Margin="1055,549,0,0" VerticalAlignment="Top"  Foreground="White" FontSize="48" Height="135" Width="404" Click="Button_LeaveShift_Click">
                 <Button.Template >
                     <ControlTemplate TargetType="{x:Type Button}" >
                         <Border  Background="Red"  CornerRadius="15">

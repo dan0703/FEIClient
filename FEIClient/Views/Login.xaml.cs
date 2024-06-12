@@ -43,7 +43,10 @@ namespace FEIClient.Views
 
         private void Button_Login_Click(object sender, RoutedEventArgs e)
         {
-
+            var menuWindow = new Menu();
+            menuWindow.ConfigureMenuWindow("dan joshua segura domínguez");
+            Close();
+            menuWindow.ShowDialog();
         }
 
         private void Button_SignUp_Click(object sender, RoutedEventArgs e)
