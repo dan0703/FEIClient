@@ -11,15 +11,15 @@
     <Viewbox Stretch="Fill" StretchDirection="Both">
         <Grid Width="1920" Height="1080">
             <Image x:Name="Image_LogoFEI" HorizontalAlignment="Left" Height="1075" Margin="5,0,0,0" VerticalAlignment="Top" Width="960" Source="/Views/Images/LogoFEI.png"/>
-            <Label x:Name="Label_SignUp" Content="Registro" HorizontalAlignment="Left" Margin="960,118,0,0" VerticalAlignment="Top" FontSize="52" FontFamily="Sans Serif Collection" Foreground="#FF666666" Width="950" HorizontalContentAlignment="Center" Height="122"/>
-            <TextBox x:Name="TextBox_User" HorizontalAlignment="Left" Margin="1254,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Height="55" FontSize="22" />
-            <Label Content="Ej: Segura Domínguez Dan Joshua" HorizontalAlignment="Left" Margin="1254,341,0,0" VerticalAlignment="Top" Width="364" HorizontalContentAlignment="Center" FontSize="18" Foreground="#FF666666"/>
-            <Button x:Name="Button_ShowPassword" Content="👁‍🗨" ToolTip="Mostrar o ocultar contraseña" HorizontalAlignment="Left" Margin="1617,755,0,0" VerticalAlignment="Top" Height="55" Width="48" Background="{x:Null}" BorderBrush="#FFABADB3" Click="Button_ShowPassword_Click"/>
+            <Label x:Name="Label_SignUp" Content="Registro" HorizontalAlignment="Left" Margin="960,67,0,0" VerticalAlignment="Top" FontSize="52" FontFamily="Sans Serif Collection" Foreground="#FF666666" Width="950" HorizontalContentAlignment="Center" Height="122"/>
+            <TextBox x:Name="TextBox_User" HorizontalAlignment="Left" Margin="1254,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Height="55" FontSize="22" />
+            <Label Content="Ej: Segura Domínguez Dan Joshua" HorizontalAlignment="Left" Margin="1254,290,0,0" VerticalAlignment="Top" Width="364" HorizontalContentAlignment="Center" FontSize="18" Foreground="#FF666666"/>
+            <Button x:Name="Button_ShowPassword" Content="👁‍🗨" ToolTip="Mostrar o ocultar contraseña" HorizontalAlignment="Left" Margin="1617,704,0,0" VerticalAlignment="Top" Height="55" Width="48" Background="{x:Null}" BorderBrush="#FFABADB3" Click="Button_ShowPassword_Click"/>
             <TextBox x:Name="TextBox_ShowPassword" Visibility="Collapsed" HorizontalAlignment="Left" Margin="1254,769,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Height="55" FontSize="22" />
-            <PasswordBox x:Name="PasswordBox_Password" HorizontalAlignment="Left" Margin="1254,755,0,0"  VerticalAlignment="Top" Width="364" Height="55" FontSize="22" />
-            <Button x:Name="Button_Login" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="1254,987,0,0" VerticalAlignment="Top" Width="364" Height="55" Background="#FF2196F3" BorderBrush="{x:Null}" Foreground="White" FontSize="22" FontFamily="Sans Serif Collection" Click="Button_Login_Click"/>
-            <Button x:Name="Button_SignUp" Content="Registrarse" HorizontalAlignment="Left" Margin="1254,882,0,0" VerticalAlignment="Top"  Width="364" Height="55" Background="#FF2196F3" Foreground="White" FontFamily="Sans Serif Collection" FontSize="22" Click="Button_SignUp_Click"/>
-            <GridSplitter HorizontalAlignment="Left" Height="470" Margin="1489,729,0,0" VerticalAlignment="Top" Width="5" RenderTransformOrigin="0.5,0.5" Background="#FFCCCCCC">
+            <PasswordBox x:Name="PasswordBox_Password" HorizontalAlignment="Left" Margin="1254,704,0,0"  VerticalAlignment="Top" Width="364" Height="55" FontSize="22" />
+            <Button x:Name="Button_Login" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="1254,936,0,0" VerticalAlignment="Top" Width="364" Height="55" Background="#FF2196F3" BorderBrush="{x:Null}" Foreground="White" FontSize="22" FontFamily="Sans Serif Collection" Click="Button_Login_Click"/>
+            <Button x:Name="Button_SignUp" Content="Registrarse" HorizontalAlignment="Left" Margin="1254,831,0,0" VerticalAlignment="Top"  Width="364" Height="55" Background="#FF2196F3" Foreground="White" FontFamily="Sans Serif Collection" FontSize="22" Click="Button_SignUp_Click"/>
+            <GridSplitter HorizontalAlignment="Left" Height="470" Margin="1489,678,0,0" VerticalAlignment="Top" Width="5" RenderTransformOrigin="0.5,0.5" Background="#FFCCCCCC">
                 <GridSplitter.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -29,12 +29,12 @@
                     </TransformGroup>
                 </GridSplitter.RenderTransform>
             </GridSplitter>
-            <Label Content="Nombre:" HorizontalAlignment="Left" Margin="1254,241,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
-            <TextBox x:Name="TextBox_Matricula" HorizontalAlignment="Left" Margin="1254,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Height="55" FontSize="22" />
-            <Label Content="Ej: zS20015706" HorizontalAlignment="Left" Margin="1254,473,0,0" VerticalAlignment="Top" Width="364" HorizontalContentAlignment="Center" FontSize="18" Foreground="#FF666666"/>
-            <Label Content="Matricula:" HorizontalAlignment="Left" Margin="1254,380,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
+            <Label Content="Nombre:" HorizontalAlignment="Left" Margin="1254,190,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
+            <TextBox x:Name="TextBox_Matricula" HorizontalAlignment="Left" Margin="1254,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Height="55" FontSize="22" />
+            <Label Content="Ej: zS20015706" HorizontalAlignment="Left" Margin="1254,422,0,0" VerticalAlignment="Top" Width="364" HorizontalContentAlignment="Center" FontSize="18" Foreground="#FF666666"/>
+            <Label Content="Matricula:" HorizontalAlignment="Left" Margin="1254,329,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
             <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="1254,716,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
-            <ComboBox x:Name="ComboBox_EducationalProgram" HorizontalAlignment="Left" Margin="1254,547,0,0" VerticalAlignment="Top" Width="364" Height="55" FontSize="22" BorderBrush="White">
+            <ComboBox x:Name="ComboBox_EducationalProgram" HorizontalAlignment="Left" Margin="1254,496,0,0" VerticalAlignment="Top" Width="364" Height="55" FontSize="22" BorderBrush="White">
                 <ComboBox.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
@@ -42,10 +42,10 @@
                     </LinearGradientBrush>
                 </ComboBox.Background>
             </ComboBox>
-            <ComboBox x:Name="ComboBox_Tutor" HorizontalAlignment="Left" Margin="1253,646,0,0" VerticalAlignment="Top" Width="364" Height="55" FontSize="22"/>
-            <Label Content="Programa Educativo:" HorizontalAlignment="Left" Margin="1254,508,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
-            <Label Content="Tutor Academico:" HorizontalAlignment="Left" Margin="1253,607,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
-            <Label Content="Mínimo 8 caracteres, al menos un numero y&#xD;&#xA; un símbolo " HorizontalAlignment="Left" Margin="1254,815,0,0" VerticalAlignment="Top" Width="364" FontSize="18" Foreground="#FF666666" Height="56"/>
+            <ComboBox x:Name="ComboBox_Tutor" HorizontalAlignment="Left" Margin="1253,595,0,0" VerticalAlignment="Top" Width="364" Height="55" FontSize="22"/>
+            <Label Content="Programa Educativo:" HorizontalAlignment="Left" Margin="1254,457,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
+            <Label Content="Tutor Academico:" HorizontalAlignment="Left" Margin="1253,556,0,0" VerticalAlignment="Top" Width="364" FontSize="22" Foreground="#FF666666"/>
+            <Label Content="Mínimo 8 caracteres, al menos un numero y&#xD;&#xA; un símbolo " HorizontalAlignment="Left" Margin="1254,764,0,0" VerticalAlignment="Top" Width="364" FontSize="18" Foreground="#FF666666" Height="56"/>
         </Grid>
     </Viewbox>
 </Window>
