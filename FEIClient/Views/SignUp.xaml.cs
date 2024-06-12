@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +15,25 @@ using System.Windows.Shapes;
 namespace FEIClient.Views
 {
     /// <summary>
-    /// Lógica de interacción para Login.xaml
+    /// Lógica de interacción para SignUp.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class SignUp : Window
     {
-        public Login()
+        public SignUp()
         {
             InitializeComponent();
+        }
+
+        private void Button_Login_Click(object sender, RoutedEventArgs e)
+        {
+            var logInWindow = new Login();
+            Close();
+            logInWindow.ShowDialog();
+        }
+
+        private void Button_SignUp_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Button_ShowPassword_Click(object sender, RoutedEventArgs e)
@@ -39,18 +50,6 @@ namespace FEIClient.Views
                 TextBox_ShowPassword.Visibility = Visibility.Collapsed;
                 PasswordBox_Password.Visibility = Visibility.Visible;
             }
-        }
-
-        private void Button_Login_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_SignUp_Click(object sender, RoutedEventArgs e)
-        {
-            var signUpWindow = new SignUp();
-            Close();
-            signUpWindow.ShowDialog();
         }
     }
 }
