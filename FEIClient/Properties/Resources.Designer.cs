@@ -61,11 +61,29 @@ namespace FEIClient.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, llene todos los campos.
+        /// </summary>
+        internal static string MessageBox_Error_EmptyFields {
+            get {
+                return ResourceManager.GetString("MessageBox_Error_EmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El servicio no se encuentra disponible.
         /// </summary>
         internal static string MessageBox_Error_ServiceException {
             get {
                 return ResourceManager.GetString("MessageBox_Error_ServiceException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Credeciales incorrectas.
+        /// </summary>
+        internal static string MessageBox_SignIn_IncorrectCredentials {
+            get {
+                return ResourceManager.GetString("MessageBox_SignIn_IncorrectCredentials", resourceCulture);
             }
         }
     }

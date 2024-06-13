@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FEIClient.FEIService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -29,11 +30,11 @@ namespace FEIClient.Views
         {
             InitializeComponent();
         }
-        public void ConfigureMenuWindow(string account)
+        public void ConfigureMenuWindow(ViewStudentInfo account)
         {
             try
             {
-                this.account = account;
+                this.account = account.fullName;
                 Label_Name.Content = account;
                 items = new List<string>
                 {
@@ -41,7 +42,7 @@ namespace FEIClient.Views
                     "AnotherUser",
                     "MoreUsers",
                     "AnotherUser",
-                    account,
+                    account.fullName,
                     "MoreUsers",
                     "AnotherUser",
                     "MoreUsers",
