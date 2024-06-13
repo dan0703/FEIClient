@@ -15,3 +15,11 @@ C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.csproj.Gener
 C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.csproj.CoreCompileInputs.cache
 C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.exe
 C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\FEIClient.pdb
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\Menu.g.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\Menu.baml
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\AppointmentRequest.g.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\AppointmentRequest.baml
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveShift.g.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveShift.baml
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\TurnCard.g.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\TurnCard.baml

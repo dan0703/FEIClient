@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\danse\source\repos\FEIClient\FEIClient\App.xaml
-21537125247
+61954402936
 
-6-106460753
-13-1310406943
-Views\Login.xaml;Views\SignUp.xaml;
+10715641498
+142063754234
+Views\AppointmentRequest.xaml;Views\LeaveShift.xaml;Views\Login.xaml;Views\Menu.xaml;Views\SignUp.xaml;Views\TurnCard.xaml;
 
 False
 

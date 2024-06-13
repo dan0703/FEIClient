@@ -1,0 +1,161 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\danse\\source\\repos\\FEIClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|c:\\users\\danse\\source\\repos\\feiclient\\feiclient\\views\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|solutionrelative:feiclient\\views\\menu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|c:\\users\\danse\\source\\repos\\feiclient\\feiclient\\views\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|solutionrelative:feiclient\\views\\menu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|C:\\Users\\danse\\source\\repos\\FEIClient\\feiclient\\views\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|solutionrelative:feiclient\\views\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|C:\\Users\\danse\\source\\repos\\FEIClient\\feiclient\\views\\signup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|solutionrelative:feiclient\\views\\signup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|C:\\Users\\danse\\source\\repos\\FEIClient\\feiclient\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|solutionrelative:feiclient\\views\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|c:\\users\\danse\\source\\repos\\feiclient\\feiclient\\views\\appointmentrequest.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|solutionrelative:feiclient\\views\\appointmentrequest.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|c:\\users\\danse\\source\\repos\\feiclient\\feiclient\\views\\signup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9EE2E547-E63A-4EDD-B875-7431EAA7B8CB}|FEIClient\\FEIClient.csproj|solutionrelative:feiclient\\views\\signup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{79664857-03bf-4bca-aa54-ec998b3328f8}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppointmentRequest.xaml",
+              "DocumentMoniker": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\AppointmentRequest.xaml",
+              "RelativeDocumentMoniker": "FEIClient\\Views\\AppointmentRequest.xaml",
+              "ToolTip": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\AppointmentRequest.xaml",
+              "RelativeToolTip": "FEIClient\\Views\\AppointmentRequest.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-12T16:42:17.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Views\\Menu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Menu.xaml.cs",
+              "RelativeDocumentMoniker": "FEIClient\\Views\\Menu.xaml.cs",
+              "ToolTip": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Menu.xaml.cs",
+              "RelativeToolTip": "FEIClient\\Views\\Menu.xaml.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAqwDEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T16:41:12.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menu.xaml",
+              "DocumentMoniker": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Menu.xaml",
+              "RelativeDocumentMoniker": "FEIClient\\Views\\Menu.xaml",
+              "ToolTip": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Menu.xaml",
+              "RelativeToolTip": "FEIClient\\Views\\Menu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-12T15:26:59.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SignUp.xaml",
+              "DocumentMoniker": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\SignUp.xaml",
+              "RelativeDocumentMoniker": "FEIClient\\Views\\SignUp.xaml",
+              "ToolTip": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\SignUp.xaml",
+              "RelativeToolTip": "FEIClient\\Views\\SignUp.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-12T00:49:48.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Login.xaml",
+              "RelativeDocumentMoniker": "FEIClient\\Views\\Login.xaml",
+              "ToolTip": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Login.xaml",
+              "RelativeToolTip": "FEIClient\\Views\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-12T00:03:35.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "FEIClient\\Views\\Login.xaml.cs",
+              "ToolTip": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\Login.xaml.cs",
+              "RelativeToolTip": "FEIClient\\Views\\Login.xaml.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAqwDcAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T00:24:02.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignUp.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\SignUp.xaml.cs",
+              "RelativeDocumentMoniker": "FEIClient\\Views\\SignUp.xaml.cs",
+              "ToolTip": "C:\\Users\\danse\\source\\repos\\FEIClient\\FEIClient\\Views\\SignUp.xaml.cs",
+              "RelativeToolTip": "FEIClient\\Views\\SignUp.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T00:55:34.579Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

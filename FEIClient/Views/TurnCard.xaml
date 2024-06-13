@@ -1,0 +1,17 @@
+﻿<Window x:Class="FEIClient.Views.TurnCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FEIClient.Views"
+        mc:Ignorable="d"
+        Title="TurnCard" Height="150" Width="384">
+    <Grid >
+        <Label x:Name="Label_Matricula" Content="zs20015706" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="83" Margin="10,10,0,0" FontSize="14"/>
+        <Label x:Name="Label_Name" Content="Segura Domínguez Dan Joshua" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="374" Margin="10,50,0,0" FontSize="14"/>
+        <Label x:Name="Label_EducationalProgram" Content="Ingenieria de Software" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="364" Margin="0,89,0,0" FontSize="14"/>
+
+    </Grid>
+
+
+</Window>
