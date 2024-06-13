@@ -18,21 +18,22 @@
             </Grid>
             <Grid  Height="864" Width="384" Background="White" Margin="1536,216,0,0" >
                 <Label Content="Turnos" FontSize="42" FontWeight="Bold" Margin="0,20,0,780" HorizontalAlignment="Center" />
-                <Label Content="Actual" FontSize="22" FontWeight="Bold" Margin="6,120,0,706" HorizontalAlignment="Left" />
-
                 <Border BorderBrush="DarkGray" BorderThickness="4" Margin="0,-4,0,0">
                 </Border>
                 <Border BorderBrush="DarkGray" BorderThickness="4" Margin="0,120,0,0">
                 </Border>
-                <Label x:Name="Label_Time" Content="Tiempo transcurrido:" FontSize="18" FontWeight="Bold"  Margin="6,158,0,668" HorizontalAlignment="Left" />
-                <Grid x:Name="Grid_TurnCardContainer"  Height="664" Background="WhiteSmoke" Margin="10,190,10,10" />
+                <Label x:Name="Label_Time" Content="Tiempo del turno actual:" FontSize="18" FontWeight="Bold"  Margin="6,120,0,706" HorizontalAlignment="Left" />
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="6,163,5,4">
+                    <StackPanel x:Name="StackPanel_TurnCardContainer" Background="WhiteSmoke" Margin="0,0,0,0" Width="364"/>
+                </ScrollViewer>
+
             </Grid>
             <Label Content="Nombre" HorizontalAlignment="Left" Margin="51,293,0,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold"/>
             <Label x:Name="Label_Name" Content="" HorizontalAlignment="Left" Margin="51,351,0,0" VerticalAlignment="Top" FontSize="36" Width="1004"/>
             <Label Content="Programa Educativo" HorizontalAlignment="Left" Margin="51,438,0,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Width="419"/>
             <Label x:Name="Label_EducationalProgram" Content="" HorizontalAlignment="Left" Margin="51,496,0,0" VerticalAlignment="Top" FontSize="36" Width="1004"/>
             <Label Content="Matricula" HorizontalAlignment="Left" Margin="51,590,0,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Width="419"/>
-            <Label x:Name="Label_Matricula" Content="" HorizontalAlignment="Left" Margin="51,648,0,0" VerticalAlignment="Top" FontSize="36" Width="1004"/>
+            <Label x:Name="Label_StudentId" Content="" HorizontalAlignment="Left" Margin="51,648,0,0" VerticalAlignment="Top" FontSize="36" Width="1004"/>
             <Label Content="Tutor Academico" HorizontalAlignment="Left" Margin="51,736,0,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Width="419"/>
             <Label x:Name="Label_AcademicTutor" Content="" HorizontalAlignment="Left" Margin="51,794,0,0" VerticalAlignment="Top" FontSize="36" Width="1004"/>
             <Button x:Name="Button_LogOut" Content="Cerrar Sesion" HorizontalAlignment="Left" Margin="51,986,0,0" VerticalAlignment="Top" Background="#FFFF6666" Foreground="White" FontSize="24" Height="57" Width="209" FontWeight="Bold" Click="Button_LogOut_Click"/>

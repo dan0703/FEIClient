@@ -17,11 +17,16 @@ namespace FEIClient.Views
     /// <summary>
     /// Lógica de interacción para TurnCard.xaml
     /// </summary>
-    public partial class TurnCard : Window
+    public partial class TurnCard : UserControl
     {
         public TurnCard()
         {
             InitializeComponent();
+        }
+
+        internal void ConfigureTurnCardWindow(string item)
+        {
+            Label_Name.Content = item;
         }
     }
 }

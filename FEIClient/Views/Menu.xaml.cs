@@ -23,6 +23,7 @@ namespace FEIClient.Views
     /// </summary>
     public partial class Menu : Window
     {
+        private List<String> items;
         private string account;
         public Menu()
         {
@@ -33,23 +34,78 @@ namespace FEIClient.Views
             try
             {
                 this.account = account;
-                
-
-            }
-            catch (CommunicationException ex)
-            {
-                // log.Error(ex);
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException + ex.Message);
-            }
-            catch (TimeoutException ex)
-            {
-                //  log.Error(ex);
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException + ex.Message);
+                Label_Name.Content = account;
+                items = new List<string>
+                {
+                    
+                    "AnotherUser",
+                    "MoreUsers",
+                    "AnotherUser",
+                    account,
+                    "MoreUsers",
+                    "AnotherUser",
+                    "MoreUsers",
+                    "AnotherUser",
+                    "MoreUsers"
+                };
+                AddTurnCardsToGrid();
             }
             catch (Exception ex)
             {
                 //   log.Error(ex);
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException + ex.Message);
+            }
+        }
+
+        private void AddTurnCardsToGrid()
+        {
+            StackPanel_TurnCardContainer.Children.Clear();
+
+            bool isYourTurn = false;
+
+            Label actualLabel = new Label
+            {
+                Content = "Actual",
+                FontSize = 22,
+                FontWeight = FontWeights.Bold,
+                Margin = new Thickness(6, 0, 0, 10),
+                HorizontalAlignment = HorizontalAlignment.Left
+            };
+            StackPanel_TurnCardContainer.Children.Add(actualLabel);
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i] == account && !isYourTurn)
+                {
+                    Label yourTurnLabel = new Label
+                    {
+                        Content = "Tu turno",
+                        FontSize = 18,
+                        Margin = new Thickness(6, 20, 0, 10),
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    };
+                    StackPanel_TurnCardContainer.Children.Add(yourTurnLabel);
+                    isYourTurn = true; 
+                }
+
+                if (i == 1 && !isYourTurn)
+                {
+                    Label siguienteLabel = new Label
+                    {
+                        Content = "Siguiente: ",
+                        FontSize = 22,
+                        FontWeight = FontWeights.Bold,
+                        Margin = new Thickness(6, 20, 0, 20),
+                        HorizontalAlignment = HorizontalAlignment.Left
+                    };
+                    StackPanel_TurnCardContainer.Children.Add(siguienteLabel);
+                }
+
+                TurnCard turnCard = new TurnCard();
+                turnCard.ConfigureTurnCardWindow(items[i]);
+                turnCard.Margin = new Thickness(0, 0, 0, 20); 
+
+                StackPanel_TurnCardContainer.Children.Add(turnCard);
             }
         }
 
