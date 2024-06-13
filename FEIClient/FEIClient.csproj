@@ -107,6 +107,12 @@
     <None Include="Connected Services\FEIService\Domain.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\FEIService\FEIClient.FEIService.Career.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FEIService\FEIClient.FEIService.Tutor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\FEIService\FEIClient.FEIService.ViewStudentInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -138,6 +138,128 @@ namespace FEIClient.FEIService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Tutor", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
+    [System.SerializableAttribute()]
+    public partial class Tutor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fullNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idTutorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fullNameField, value) != true)) {
+                    this.fullNameField = value;
+                    this.RaisePropertyChanged("fullName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idTutor {
+            get {
+                return this.idTutorField;
+            }
+            set {
+                if ((this.idTutorField.Equals(value) != true)) {
+                    this.idTutorField = value;
+                    this.RaisePropertyChanged("idTutor");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Career", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
+    [System.SerializableAttribute()]
+    public partial class Career : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idCareerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idCareer {
+            get {
+                return this.idCareerField;
+            }
+            set {
+                if ((this.idCareerField.Equals(value) != true)) {
+                    this.idCareerField = value;
+                    this.RaisePropertyChanged("idCareer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FEIService.IViewStudentInfo")]
     public interface IViewStudentInfo {
@@ -182,6 +304,147 @@ namespace FEIClient.FEIService {
         
         public System.Threading.Tasks.Task<FEIClient.FEIService.ViewStudentInfo> LogInAsync(string studentId, string password) {
             return base.Channel.LogInAsync(studentId, password);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FEIService.ITutor")]
+    public interface ITutor {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITutor/GetTutorsList", ReplyAction="http://tempuri.org/ITutor/GetTutorsListResponse")]
+        FEIClient.FEIService.Tutor[] GetTutorsList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITutor/GetTutorsList", ReplyAction="http://tempuri.org/ITutor/GetTutorsListResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.Tutor[]> GetTutorsListAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ITutorChannel : FEIClient.FEIService.ITutor, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TutorClient : System.ServiceModel.ClientBase<FEIClient.FEIService.ITutor>, FEIClient.FEIService.ITutor {
+        
+        public TutorClient() {
+        }
+        
+        public TutorClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public TutorClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public TutorClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public TutorClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public FEIClient.FEIService.Tutor[] GetTutorsList() {
+            return base.Channel.GetTutorsList();
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.Tutor[]> GetTutorsListAsync() {
+            return base.Channel.GetTutorsListAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FEIService.ICareer")]
+    public interface ICareer {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICareer/GetCareerList", ReplyAction="http://tempuri.org/ICareer/GetCareerListResponse")]
+        FEIClient.FEIService.Career[] GetCareerList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICareer/GetCareerList", ReplyAction="http://tempuri.org/ICareer/GetCareerListResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.Career[]> GetCareerListAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICareerChannel : FEIClient.FEIService.ICareer, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CareerClient : System.ServiceModel.ClientBase<FEIClient.FEIService.ICareer>, FEIClient.FEIService.ICareer {
+        
+        public CareerClient() {
+        }
+        
+        public CareerClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public CareerClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CareerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CareerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public FEIClient.FEIService.Career[] GetCareerList() {
+            return base.Channel.GetCareerList();
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.Career[]> GetCareerListAsync() {
+            return base.Channel.GetCareerListAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FEIService.IStudent")]
+    public interface IStudent {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/RegisterStudent", ReplyAction="http://tempuri.org/IStudent/RegisterStudentResponse")]
+        bool RegisterStudent(FEIClient.FEIService.ViewStudentInfo student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/RegisterStudent", ReplyAction="http://tempuri.org/IStudent/RegisterStudentResponse")]
+        System.Threading.Tasks.Task<bool> RegisterStudentAsync(FEIClient.FEIService.ViewStudentInfo student);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IStudentChannel : FEIClient.FEIService.IStudent, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class StudentClient : System.ServiceModel.ClientBase<FEIClient.FEIService.IStudent>, FEIClient.FEIService.IStudent {
+        
+        public StudentClient() {
+        }
+        
+        public StudentClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public StudentClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public StudentClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public StudentClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool RegisterStudent(FEIClient.FEIService.ViewStudentInfo student) {
+            return base.Channel.RegisterStudent(student);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterStudentAsync(FEIClient.FEIService.ViewStudentInfo student) {
+            return base.Channel.RegisterStudentAsync(student);
         }
     }
 }

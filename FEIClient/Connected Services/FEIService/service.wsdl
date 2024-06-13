@@ -29,6 +29,93 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ITutor_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ICareer_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IStudent_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
@@ -42,10 +129,46 @@
   <wsdl:message name="IViewStudentInfo_LogIn_OutputMessage">
     <wsdl:part name="parameters" element="tns:LogInResponse" />
   </wsdl:message>
+  <wsdl:message name="ITutor_GetTutorsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorsList" />
+  </wsdl:message>
+  <wsdl:message name="ITutor_GetTutorsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICareer_GetCareerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCareerList" />
+  </wsdl:message>
+  <wsdl:message name="ICareer_GetCareerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCareerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudent_RegisterStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterStudent" />
+  </wsdl:message>
+  <wsdl:message name="IStudent_RegisterStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterStudentResponse" />
+  </wsdl:message>
   <wsdl:portType name="IViewStudentInfo">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IViewStudentInfo/LogIn" message="tns:IViewStudentInfo_LogIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IViewStudentInfo/LogInResponse" message="tns:IViewStudentInfo_LogIn_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITutor">
+    <wsdl:operation name="GetTutorsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITutor/GetTutorsList" message="tns:ITutor_GetTutorsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITutor/GetTutorsListResponse" message="tns:ITutor_GetTutorsList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICareer">
+    <wsdl:operation name="GetCareerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICareer/GetCareerList" message="tns:ICareer_GetCareerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICareer/GetCareerListResponse" message="tns:ICareer_GetCareerList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IStudent">
+    <wsdl:operation name="RegisterStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudent/RegisterStudent" message="tns:IStudent_RegisterStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudent/RegisterStudentResponse" message="tns:IStudent_RegisterStudent_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IViewStudentInfo" type="tns:IViewStudentInfo">
@@ -61,11 +184,77 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ITutor" type="tns:ITutor">
+    <wsp:PolicyReference URI="#NetTcpBinding_ITutor_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetTutorsList">
+      <soap12:operation soapAction="http://tempuri.org/ITutor/GetTutorsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ICareer" type="tns:ICareer">
+    <wsp:PolicyReference URI="#NetTcpBinding_ICareer_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetCareerList">
+      <soap12:operation soapAction="http://tempuri.org/ICareer/GetCareerList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IStudent" type="tns:IStudent">
+    <wsp:PolicyReference URI="#NetTcpBinding_IStudent_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RegisterStudent">
+      <soap12:operation soapAction="http://tempuri.org/IStudent/RegisterStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="Implementations">
     <wsdl:port name="NetTcpBinding_IViewStudentInfo" binding="tns:NetTcpBinding_IViewStudentInfo">
       <soap12:address location="net.tcp://192.168.1.84:8081/ViewStudentInfo" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://192.168.1.84:8081/ViewStudentInfo</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-DHB3R29\danse</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ITutor" binding="tns:NetTcpBinding_ITutor">
+      <soap12:address location="net.tcp://192.168.1.84:8081/Tutor" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.1.84:8081/Tutor</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-DHB3R29\danse</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ICareer" binding="tns:NetTcpBinding_ICareer">
+      <soap12:address location="net.tcp://192.168.1.84:8081/Career" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.1.84:8081/Career</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-DHB3R29\danse</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IStudent" binding="tns:NetTcpBinding_IStudent">
+      <soap12:address location="net.tcp://192.168.1.84:8081/Student" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.1.84:8081/Student</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Upn>DESKTOP-DHB3R29\danse</Upn>
         </Identity>

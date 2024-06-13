@@ -120,10 +120,23 @@
   <data name="MessageBox_Error_EmptyFields" xml:space="preserve">
     <value>Por favor, llene todos los campos</value>
   </data>
+  <data name="MessageBox_Error_RegisterError" xml:space="preserve">
+    <value>Ha ocurrido un error mientras se registraba su usuario, intentelo más tarde</value>
+  </data>
   <data name="MessageBox_Error_ServiceException" xml:space="preserve">
     <value>El servicio no se encuentra disponible</value>
   </data>
   <data name="MessageBox_SignIn_IncorrectCredentials" xml:space="preserve">
     <value>Credeciales incorrectas</value>
+  </data>
+  <data name="MessageBox_SingUp_BadMatricula" xml:space="preserve">
+    <value>Por favor, ingresa una matricula valida</value>
+  </data>
+  <data name="MessageBox_SingUp_BadPassword" xml:space="preserve">
+    <value>Por favor, ingrese una contraseña que contenga mínimo 8 caracteres, al menos un numero y
+ un símbolo</value>
+  </data>
+  <data name="MessageBox_Success_RegisterSucessfull" xml:space="preserve">
+    <value>El registro se ha completado con exito</value>
   </data>
 </root>

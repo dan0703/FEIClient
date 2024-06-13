@@ -11,4 +11,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ViewStudentInfo" nillable="true" type="tns:ViewStudentInfo" />
+  <xs:complexType name="ArrayOfTutor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tutor" nillable="true" type="tns:Tutor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTutor" nillable="true" type="tns:ArrayOfTutor" />
+  <xs:complexType name="Tutor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTutor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tutor" nillable="true" type="tns:Tutor" />
+  <xs:complexType name="ArrayOfCareer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Career" nillable="true" type="tns:Career" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCareer" nillable="true" type="tns:ArrayOfCareer" />
+  <xs:complexType name="Career">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idCareer" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Career" nillable="true" type="tns:Career" />
 </xs:schema>

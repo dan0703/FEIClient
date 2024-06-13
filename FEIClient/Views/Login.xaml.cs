@@ -60,9 +60,25 @@ namespace FEIClient.Views
 
         private void Button_SignUp_Click(object sender, RoutedEventArgs e)
         {
-            var signUpWindow = new SignUp();
-            Close();
-            signUpWindow.ShowDialog();
+            try
+            {
+                var signUpWindow = new SignUp();
+                Close();
+                signUpWindow.ShowDialog();
+            }          
+            catch (CommunicationException ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (TimeoutException ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
         private bool IsUserOrPasswordEmpty()
         {

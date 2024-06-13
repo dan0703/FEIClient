@@ -70,6 +70,15 @@ namespace FEIClient.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ha ocurrido un error mientras se registraba su usuario, intentelo más tarde.
+        /// </summary>
+        internal static string MessageBox_Error_RegisterError {
+            get {
+                return ResourceManager.GetString("MessageBox_Error_RegisterError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El servicio no se encuentra disponible.
         /// </summary>
         internal static string MessageBox_Error_ServiceException {
@@ -84,6 +93,34 @@ namespace FEIClient.Properties {
         internal static string MessageBox_SignIn_IncorrectCredentials {
             get {
                 return ResourceManager.GetString("MessageBox_SignIn_IncorrectCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, ingresa una matricula valida.
+        /// </summary>
+        internal static string MessageBox_SingUp_BadMatricula {
+            get {
+                return ResourceManager.GetString("MessageBox_SingUp_BadMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, ingrese una contraseña que contenga mínimo 8 caracteres, al menos un numero y
+        /// un símbolo.
+        /// </summary>
+        internal static string MessageBox_SingUp_BadPassword {
+            get {
+                return ResourceManager.GetString("MessageBox_SingUp_BadPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El registro se ha completado con exito.
+        /// </summary>
+        internal static string MessageBox_Success_RegisterSucessfull {
+            get {
+                return ResourceManager.GetString("MessageBox_Success_RegisterSucessfull", resourceCulture);
             }
         }
     }
