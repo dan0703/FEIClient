@@ -46,7 +46,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Button_LeaveShift" Content="Abandonar Turno" HorizontalAlignment="Left" Margin="1055,549,0,0" VerticalAlignment="Top"  Foreground="White" FontSize="48" Height="135" Width="404" Click="Button_LeaveShift_Click">
+            <Button x:Name="Button_LeaveShift" Content="Abandonar Turno" HorizontalAlignment="Left" Margin="1055,549,0,0" VerticalAlignment="Top"  Foreground="White" FontSize="48" Height="135" Width="404" Click="Button_LeaveShift_Click" IsEnabled="False">
                 <Button.Template >
                     <ControlTemplate TargetType="{x:Type Button}" >
                         <Border  Background="Red"  CornerRadius="15">

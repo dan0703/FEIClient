@@ -22,40 +22,63 @@ namespace FEIClient.Views
     /// <summary>
     /// Lógica de interacción para Menu.xaml
     /// </summary>
-    public partial class Menu : Window
+    public partial class Menu : Window, IAppointmentCallback
     {
-        private List<String> items;
-        private string account;
+        private  AppointmentClient appointmentClient;
+        private List<Appointment> appointmentList;
+        private ViewStudentInfo student;
+        private  TutorClient tutorClient;
         public Menu()
         {
             InitializeComponent();
+            appointmentClient = new AppointmentClient(new InstanceContext(this));
+            appointmentList = new List<Appointment>();
+            tutorClient = new TutorClient();
+            Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
         }
         public void ConfigureMenuWindow(ViewStudentInfo account)
         {
             try
             {
-                this.account = account.fullName;
-                Label_Name.Content = account;
-                items = new List<string>
-                {
-                    
-                    "AnotherUser",
-                    "MoreUsers",
-                    "AnotherUser",
-                    account.fullName,
-                    "MoreUsers",
-                    "AnotherUser",
-                    "MoreUsers",
-                    "AnotherUser",
-                    "MoreUsers"
-                };
+                this.student = account;
+                Label_Name.Content = student.fullName;
+                Label_AcademicTutor.Content = GetTutorById(student.idTutor);
+                Label_EducationalProgram.Content = student.careerName;
+                Label_StudentId.Content = student.idStudent;
+                appointmentClient.JoinToSesion(student.idStudent);
+                GetAppointmentList();
                 AddTurnCardsToGrid();
+            }
+            catch (CommunicationException ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (TimeoutException ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
-                //   log.Error(ex);
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException + ex.Message);
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private string GetTutorById(int idTutor)
+        {
+            string tutorName = "";
+            try
+            {
+                tutorName = tutorClient.GetTutorById(idTutor).fullName;
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return tutorName;
+        }
+
+        private void GetAppointmentList()
+        {
+            appointmentList = appointmentClient.GetAllAppointments().ToList();
         }
 
         private void AddTurnCardsToGrid()
@@ -74,10 +97,15 @@ namespace FEIClient.Views
             };
             StackPanel_TurnCardContainer.Children.Add(actualLabel);
 
-            for (int i = 0; i < items.Count; i++)
+            for (int i = 0; i < appointmentList.Count; i++)
             {
-                if (items[i] == account && !isYourTurn)
+                if (appointmentList[i].student_IdStudent == student.idStudent && !isYourTurn)
                 {
+                    Button_LeaveShift.IsEnabled = true;
+                    Button_AppointmentRequest.IsEnabled = false;
+                    Button_LeaveShift.Effect = null;
+                    Button_AppointmentRequest.Effect = new System.Windows.Media.Effects.BlurEffect();
+
                     Label yourTurnLabel = new Label
                     {
                         Content = "Tu turno",
@@ -86,7 +114,15 @@ namespace FEIClient.Views
                         HorizontalAlignment = HorizontalAlignment.Center
                     };
                     StackPanel_TurnCardContainer.Children.Add(yourTurnLabel);
-                    isYourTurn = true; 
+                    isYourTurn = true;
+                }
+                else
+                {
+                    Button_LeaveShift.IsEnabled = false;
+                    Button_AppointmentRequest.IsEnabled = true;
+                    Button_AppointmentRequest.Effect = null;
+                    Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
+
                 }
 
                 if (i == 1 && !isYourTurn)
@@ -103,7 +139,7 @@ namespace FEIClient.Views
                 }
 
                 TurnCard turnCard = new TurnCard();
-                turnCard.ConfigureTurnCardWindow(items[i]);
+                turnCard.ConfigureTurnCardWindow(appointmentList[i]);
                 turnCard.Margin = new Thickness(0, 0, 0, 20); 
 
                 StackPanel_TurnCardContainer.Children.Add(turnCard);
@@ -113,15 +149,15 @@ namespace FEIClient.Views
         private void Button_LogOut_Click(object sender, RoutedEventArgs e)
         {
             Login loginWindow = new Login();
-            account=null;
+            student=null;
             Close();
             loginWindow.ShowDialog();
         }
 
         private void Button_AppointmentRequest_Click(object sender, RoutedEventArgs e)
         {
-            AppointmentRequest appointmentRequestWindow = new AppointmentRequest();
-            appointmentRequestWindow.ConfigureWindowVariables(account);
+            AppointmentRequest appointmentRequestWindow = new AppointmentRequest(this);
+            appointmentRequestWindow.ConfigureWindowVariables(student);
             this.Effect = new System.Windows.Media.Effects.BlurEffect();
             appointmentRequestWindow.ShowDialog();
             this.Effect = null;
@@ -129,11 +165,64 @@ namespace FEIClient.Views
 
         private void Button_LeaveShift_Click(object sender, RoutedEventArgs e)
         {
-            LeaveShift leaveShiftWindow = new LeaveShift();
-            LeaveShift.ConfigureWindowVariables(account);
+            LeaveShift leaveShiftWindow = new LeaveShift(this);
             this.Effect = new System.Windows.Media.Effects.BlurEffect();
             leaveShiftWindow.ShowDialog();
             this.Effect = null;
+        }
+
+        public void SetAppointments(Appointment[] appointments)
+        {
+            this.appointmentList = appointments.ToList();
+            AddTurnCardsToGrid();
+
+        }
+
+        public void LeaveAppointment(string notAttendedReason)
+        {
+            try
+            {
+                appointmentClient.LeaveAppointment(student.idStudent, notAttendedReason);
+                Button_AppointmentRequest.IsEnabled = true;
+                Button_AppointmentRequest.Effect = null;
+                Button_LeaveShift.IsEnabled = false;
+                Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
+            }
+            catch (CommunicationException ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (TimeoutException ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        public void RequestAppointment(Appointment appointment)
+        {
+            if (appointment != null)
+            {
+                try
+                {
+                    appointmentClient.AppointmentRequest(appointment);
+                }
+                catch (CommunicationException ex)
+                {
+                    MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (TimeoutException ex)
+                {
+                    MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }

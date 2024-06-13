@@ -23,6 +23,9 @@ namespace FEIClient.FEIService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string careerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string fullNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -40,6 +43,9 @@ namespace FEIClient.FEIService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string passwordField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tutorNameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -47,6 +53,19 @@ namespace FEIClient.FEIService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string careerName {
+            get {
+                return this.careerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.careerNameField, value) != true)) {
+                    this.careerNameField = value;
+                    this.RaisePropertyChanged("careerName");
+                }
             }
         }
         
@@ -124,6 +143,19 @@ namespace FEIClient.FEIService {
                 if ((object.ReferenceEquals(this.passwordField, value) != true)) {
                     this.passwordField = value;
                     this.RaisePropertyChanged("password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tutorName {
+            get {
+                return this.tutorNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tutorNameField, value) != true)) {
+                    this.tutorNameField = value;
+                    this.RaisePropertyChanged("tutorName");
                 }
             }
         }
@@ -260,6 +292,333 @@ namespace FEIClient.FEIService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Student", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
+    [System.SerializableAttribute()]
+    public partial class Student : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fullNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idCareerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string idStudentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idTutorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idUserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string matriculaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fullNameField, value) != true)) {
+                    this.fullNameField = value;
+                    this.RaisePropertyChanged("fullName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idCareer {
+            get {
+                return this.idCareerField;
+            }
+            set {
+                if ((this.idCareerField.Equals(value) != true)) {
+                    this.idCareerField = value;
+                    this.RaisePropertyChanged("idCareer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string idStudent {
+            get {
+                return this.idStudentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.idStudentField, value) != true)) {
+                    this.idStudentField = value;
+                    this.RaisePropertyChanged("idStudent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idTutor {
+            get {
+                return this.idTutorField;
+            }
+            set {
+                if ((this.idTutorField.Equals(value) != true)) {
+                    this.idTutorField = value;
+                    this.RaisePropertyChanged("idTutor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idUser {
+            get {
+                return this.idUserField;
+            }
+            set {
+                if ((this.idUserField.Equals(value) != true)) {
+                    this.idUserField = value;
+                    this.RaisePropertyChanged("idUser");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string matricula {
+            get {
+                return this.matriculaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.matriculaField, value) != true)) {
+                    this.matriculaField = value;
+                    this.RaisePropertyChanged("matricula");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Appointment", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
+    [System.SerializableAttribute()]
+    public partial class Appointment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime attendedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int durationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idApoointmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string notAttendedReasonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int procedure_IdProcedureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string student_IdStudentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime attendedDate {
+            get {
+                return this.attendedDateField;
+            }
+            set {
+                if ((this.attendedDateField.Equals(value) != true)) {
+                    this.attendedDateField = value;
+                    this.RaisePropertyChanged("attendedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int duration {
+            get {
+                return this.durationField;
+            }
+            set {
+                if ((this.durationField.Equals(value) != true)) {
+                    this.durationField = value;
+                    this.RaisePropertyChanged("duration");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idApoointment {
+            get {
+                return this.idApoointmentField;
+            }
+            set {
+                if ((this.idApoointmentField.Equals(value) != true)) {
+                    this.idApoointmentField = value;
+                    this.RaisePropertyChanged("idApoointment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string notAttendedReason {
+            get {
+                return this.notAttendedReasonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.notAttendedReasonField, value) != true)) {
+                    this.notAttendedReasonField = value;
+                    this.RaisePropertyChanged("notAttendedReason");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int procedure_IdProcedure {
+            get {
+                return this.procedure_IdProcedureField;
+            }
+            set {
+                if ((this.procedure_IdProcedureField.Equals(value) != true)) {
+                    this.procedure_IdProcedureField = value;
+                    this.RaisePropertyChanged("procedure_IdProcedure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((this.statusField.Equals(value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string student_IdStudent {
+            get {
+                return this.student_IdStudentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.student_IdStudentField, value) != true)) {
+                    this.student_IdStudentField = value;
+                    this.RaisePropertyChanged("student_IdStudent");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Procedure", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
+    [System.SerializableAttribute()]
+    public partial class Procedure : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idProcedureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idProcedure {
+            get {
+                return this.idProcedureField;
+            }
+            set {
+                if ((this.idProcedureField.Equals(value) != true)) {
+                    this.idProcedureField = value;
+                    this.RaisePropertyChanged("idProcedure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FEIService.IViewStudentInfo")]
     public interface IViewStudentInfo {
@@ -316,6 +675,12 @@ namespace FEIClient.FEIService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITutor/GetTutorsList", ReplyAction="http://tempuri.org/ITutor/GetTutorsListResponse")]
         System.Threading.Tasks.Task<FEIClient.FEIService.Tutor[]> GetTutorsListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITutor/GetTutorById", ReplyAction="http://tempuri.org/ITutor/GetTutorByIdResponse")]
+        FEIClient.FEIService.Tutor GetTutorById(int idTutor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITutor/GetTutorById", ReplyAction="http://tempuri.org/ITutor/GetTutorByIdResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.Tutor> GetTutorByIdAsync(int idTutor);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -351,6 +716,14 @@ namespace FEIClient.FEIService {
         
         public System.Threading.Tasks.Task<FEIClient.FEIService.Tutor[]> GetTutorsListAsync() {
             return base.Channel.GetTutorsListAsync();
+        }
+        
+        public FEIClient.FEIService.Tutor GetTutorById(int idTutor) {
+            return base.Channel.GetTutorById(idTutor);
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.Tutor> GetTutorByIdAsync(int idTutor) {
+            return base.Channel.GetTutorByIdAsync(idTutor);
         }
     }
     
@@ -410,6 +783,12 @@ namespace FEIClient.FEIService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/RegisterStudent", ReplyAction="http://tempuri.org/IStudent/RegisterStudentResponse")]
         System.Threading.Tasks.Task<bool> RegisterStudentAsync(FEIClient.FEIService.ViewStudentInfo student);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/GetStudentNameById", ReplyAction="http://tempuri.org/IStudent/GetStudentNameByIdResponse")]
+        FEIClient.FEIService.Student GetStudentNameById(string idStudent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudent/GetStudentNameById", ReplyAction="http://tempuri.org/IStudent/GetStudentNameByIdResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.Student> GetStudentNameByIdAsync(string idStudent);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -445,6 +824,158 @@ namespace FEIClient.FEIService {
         
         public System.Threading.Tasks.Task<bool> RegisterStudentAsync(FEIClient.FEIService.ViewStudentInfo student) {
             return base.Channel.RegisterStudentAsync(student);
+        }
+        
+        public FEIClient.FEIService.Student GetStudentNameById(string idStudent) {
+            return base.Channel.GetStudentNameById(idStudent);
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.Student> GetStudentNameByIdAsync(string idStudent) {
+            return base.Channel.GetStudentNameByIdAsync(idStudent);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FEIService.IAppointment", CallbackContract=typeof(FEIClient.FEIService.IAppointmentCallback))]
+    public interface IAppointment {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetAllAppointments", ReplyAction="http://tempuri.org/IAppointment/GetAllAppointmentsResponse")]
+        FEIClient.FEIService.Appointment[] GetAllAppointments();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetAllAppointments", ReplyAction="http://tempuri.org/IAppointment/GetAllAppointmentsResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.Appointment[]> GetAllAppointmentsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/AppointmentRequest")]
+        void AppointmentRequest(FEIClient.FEIService.Appointment newAppointment);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/AppointmentRequest")]
+        System.Threading.Tasks.Task AppointmentRequestAsync(FEIClient.FEIService.Appointment newAppointment);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/LeaveAppointment")]
+        void LeaveAppointment(string studentId, string reason);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/LeaveAppointment")]
+        System.Threading.Tasks.Task LeaveAppointmentAsync(string studentId, string reason);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/JoinToSesion", ReplyAction="http://tempuri.org/IAppointment/JoinToSesionResponse")]
+        void JoinToSesion(string idStudent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/JoinToSesion", ReplyAction="http://tempuri.org/IAppointment/JoinToSesionResponse")]
+        System.Threading.Tasks.Task JoinToSesionAsync(string idStudent);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAppointmentCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/SetAppointments", ReplyAction="http://tempuri.org/IAppointment/SetAppointmentsResponse")]
+        void SetAppointments(FEIClient.FEIService.Appointment[] appointments);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAppointmentChannel : FEIClient.FEIService.IAppointment, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AppointmentClient : System.ServiceModel.DuplexClientBase<FEIClient.FEIService.IAppointment>, FEIClient.FEIService.IAppointment {
+        
+        public AppointmentClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public AppointmentClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public AppointmentClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AppointmentClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AppointmentClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public FEIClient.FEIService.Appointment[] GetAllAppointments() {
+            return base.Channel.GetAllAppointments();
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.Appointment[]> GetAllAppointmentsAsync() {
+            return base.Channel.GetAllAppointmentsAsync();
+        }
+        
+        public void AppointmentRequest(FEIClient.FEIService.Appointment newAppointment) {
+            base.Channel.AppointmentRequest(newAppointment);
+        }
+        
+        public System.Threading.Tasks.Task AppointmentRequestAsync(FEIClient.FEIService.Appointment newAppointment) {
+            return base.Channel.AppointmentRequestAsync(newAppointment);
+        }
+        
+        public void LeaveAppointment(string studentId, string reason) {
+            base.Channel.LeaveAppointment(studentId, reason);
+        }
+        
+        public System.Threading.Tasks.Task LeaveAppointmentAsync(string studentId, string reason) {
+            return base.Channel.LeaveAppointmentAsync(studentId, reason);
+        }
+        
+        public void JoinToSesion(string idStudent) {
+            base.Channel.JoinToSesion(idStudent);
+        }
+        
+        public System.Threading.Tasks.Task JoinToSesionAsync(string idStudent) {
+            return base.Channel.JoinToSesionAsync(idStudent);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FEIService.IProcedure")]
+    public interface IProcedure {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedure/GetProcedureList", ReplyAction="http://tempuri.org/IProcedure/GetProcedureListResponse")]
+        FEIClient.FEIService.Procedure[] GetProcedureList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcedure/GetProcedureList", ReplyAction="http://tempuri.org/IProcedure/GetProcedureListResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.Procedure[]> GetProcedureListAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IProcedureChannel : FEIClient.FEIService.IProcedure, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcedureClient : System.ServiceModel.ClientBase<FEIClient.FEIService.IProcedure>, FEIClient.FEIService.IProcedure {
+        
+        public ProcedureClient() {
+        }
+        
+        public ProcedureClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ProcedureClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProcedureClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProcedureClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public FEIClient.FEIService.Procedure[] GetProcedureList() {
+            return base.Channel.GetProcedureList();
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.Procedure[]> GetProcedureListAsync() {
+            return base.Channel.GetProcedureListAsync();
         }
     }
 }

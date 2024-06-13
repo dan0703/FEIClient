@@ -1,22 +1,9 @@
 ﻿using FEIClient.FEIService;
 using FEIClient.Logic;
-using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace FEIClient.Views
 {
@@ -92,6 +79,10 @@ namespace FEIClient.Views
         }
         private void LogIn()
         {
+            if(TextBox_ShowPassword.Visibility == Visibility.Visible)
+            {
+                PasswordBox_Password.Password = TextBox_ShowPassword.Text;
+            }
             string passwordHashed = Complements.EncryptPassword(PasswordBox_Password.Password);
             string user = TextBox_User.Text;
             try

@@ -116,6 +116,64 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IAppointment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IProcedure_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
@@ -135,6 +193,12 @@
   <wsdl:message name="ITutor_GetTutorsList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTutorsListResponse" />
   </wsdl:message>
+  <wsdl:message name="ITutor_GetTutorById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorById" />
+  </wsdl:message>
+  <wsdl:message name="ITutor_GetTutorById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="ICareer_GetCareerList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCareerList" />
   </wsdl:message>
@@ -147,6 +211,42 @@
   <wsdl:message name="IStudent_RegisterStudent_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterStudentResponse" />
   </wsdl:message>
+  <wsdl:message name="IStudent_GetStudentNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentNameById" />
+  </wsdl:message>
+  <wsdl:message name="IStudent_GetStudentNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_GetAllAppointments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAppointments" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_GetAllAppointments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_AppointmentRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppointmentRequest" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_LeaveAppointment_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveAppointment" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_JoinToSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToSesion" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_JoinToSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_SetAppointments_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SetAppointments" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_SetAppointments_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SetAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProcedure_GetProcedureList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProcedureList" />
+  </wsdl:message>
+  <wsdl:message name="IProcedure_GetProcedureList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProcedureListResponse" />
+  </wsdl:message>
   <wsdl:portType name="IViewStudentInfo">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IViewStudentInfo/LogIn" message="tns:IViewStudentInfo_LogIn_InputMessage" />
@@ -157,6 +257,10 @@
     <wsdl:operation name="GetTutorsList">
       <wsdl:input wsaw:Action="http://tempuri.org/ITutor/GetTutorsList" message="tns:ITutor_GetTutorsList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITutor/GetTutorsListResponse" message="tns:ITutor_GetTutorsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTutorById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITutor/GetTutorById" message="tns:ITutor_GetTutorById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITutor/GetTutorByIdResponse" message="tns:ITutor_GetTutorById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICareer">
@@ -169,6 +273,36 @@
     <wsdl:operation name="RegisterStudent">
       <wsdl:input wsaw:Action="http://tempuri.org/IStudent/RegisterStudent" message="tns:IStudent_RegisterStudent_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStudent/RegisterStudentResponse" message="tns:IStudent_RegisterStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudent/GetStudentNameById" message="tns:IStudent_GetStudentNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudent/GetStudentNameByIdResponse" message="tns:IStudent_GetStudentNameById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAppointment">
+    <wsdl:operation name="GetAllAppointments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/GetAllAppointments" message="tns:IAppointment_GetAllAppointments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/GetAllAppointmentsResponse" message="tns:IAppointment_GetAllAppointments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppointmentRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/AppointmentRequest" message="tns:IAppointment_AppointmentRequest_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveAppointment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/LeaveAppointment" message="tns:IAppointment_LeaveAppointment_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="JoinToSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/JoinToSesion" message="tns:IAppointment_JoinToSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/JoinToSesionResponse" message="tns:IAppointment_JoinToSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAppointments">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/SetAppointments" message="tns:IAppointment_SetAppointments_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/SetAppointmentsResponse" message="tns:IAppointment_SetAppointments_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProcedure">
+    <wsdl:operation name="GetProcedureList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProcedure/GetProcedureList" message="tns:IProcedure_GetProcedureList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProcedure/GetProcedureListResponse" message="tns:IProcedure_GetProcedureList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IViewStudentInfo" type="tns:IViewStudentInfo">
@@ -196,6 +330,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTutorById">
+      <soap12:operation soapAction="http://tempuri.org/ITutor/GetTutorById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_ICareer" type="tns:ICareer">
     <wsp:PolicyReference URI="#NetTcpBinding_ICareer_policy" />
@@ -215,6 +358,71 @@
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="RegisterStudent">
       <soap12:operation soapAction="http://tempuri.org/IStudent/RegisterStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentNameById">
+      <soap12:operation soapAction="http://tempuri.org/IStudent/GetStudentNameById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IAppointment" type="tns:IAppointment">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAppointment_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetAllAppointments">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/GetAllAppointments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppointmentRequest">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/AppointmentRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveAppointment">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/LeaveAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="JoinToSesion">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/JoinToSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAppointments">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/SetAppointments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IProcedure" type="tns:IProcedure">
+    <wsp:PolicyReference URI="#NetTcpBinding_IProcedure_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetProcedureList">
+      <soap12:operation soapAction="http://tempuri.org/IProcedure/GetProcedureList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -255,6 +463,24 @@
       <soap12:address location="net.tcp://192.168.1.84:8081/Student" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://192.168.1.84:8081/Student</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-DHB3R29\danse</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IAppointment" binding="tns:NetTcpBinding_IAppointment">
+      <soap12:address location="net.tcp://192.168.1.84:8081/Appointment" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.1.84:8081/Appointment</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-DHB3R29\danse</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IProcedure" binding="tns:NetTcpBinding_IProcedure">
+      <soap12:address location="net.tcp://192.168.1.84:8081/Procedure" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://192.168.1.84:8081/Procedure</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <Upn>DESKTOP-DHB3R29\danse</Upn>
         </Identity>

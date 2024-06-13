@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.ServiceModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using FEIClient.FEIService;
+using FEIClient.Logic;
 
 namespace FEIClient.Views
 {
@@ -19,24 +11,41 @@ namespace FEIClient.Views
     /// </summary>
     public partial class LeaveShift : Window
     {
-        public LeaveShift()
+        private Menu _menuWindow;
+
+        public LeaveShift(Menu menu)
         {
             InitializeComponent();
+            _menuWindow = menu;
         }
 
         private void Button_Leave_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!TextBoxIsEmpty())
+            {
+                if (TextBox_LeaveReazon.Text.Length <= 250)
+                {
+                    _menuWindow.LeaveAppointment(TextBox_LeaveReazon.Text);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El texto es demasiado largo, no debe de pasar de 250 caracteres","Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("El campo de texto no puede estar vacío.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private bool TextBoxIsEmpty()
+        {
+            return TextBox_LeaveReazon.Text=="";
         }
 
         private void Button_Cancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-        internal static void ConfigureWindowVariables(string account)
-        {
-            
         }
     }
 }

@@ -10,7 +10,15 @@
         <Grid Height="450" Width="800">
             <Label Content="Abandonar Turno" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="36" FontWeight="Bold"/>
             <Label Content="Ingresa la razón del abandono" HorizontalAlignment="Left" Margin="40,73,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <TextBlock x:Name="TextBlock_LeaveReazon" HorizontalAlignment="Left" Margin="40,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="272" Width="717" Background="WhiteSmoke" FontSize="18"/>
+            <TextBox x:Name="TextBox_LeaveReazon" 
+             HorizontalAlignment="Left" 
+             Margin="40,115,0,0" 
+             TextWrapping="Wrap" 
+             VerticalAlignment="Top" 
+             Height="272" 
+             Width="717" 
+             Background="WhiteSmoke" 
+             FontSize="18"/>
             <Button x:Name="Button_Leave" Content="Abandonar" HorizontalAlignment="Left" Margin="656,404,0,0" VerticalAlignment="Top" Background="#FFFF6666" Foreground="White" Height="30" Width="101" FontSize="16" BorderBrush="{x:Null}" Click="Button_Leave_Click"/>
             <Button x:Name="Button_Cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="529,404,0,0" VerticalAlignment="Top" Background="#FFADA9A9" Foreground="White" Height="30" Width="101" FontSize="16" BorderBrush="{x:Null}" Click="Button_Cancel_Click"/>
 

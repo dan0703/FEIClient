@@ -67,6 +67,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Logic\Complements.cs" />
+    <Compile Include="Logic\Constants.cs" />
     <Compile Include="Views\AppointmentRequest.xaml.cs">
       <DependentUpon>AppointmentRequest.xaml</DependentUpon>
     </Compile>
@@ -107,7 +108,16 @@
     <None Include="Connected Services\FEIService\Domain.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\FEIService\FEIClient.FEIService.Appointment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\FEIService\FEIClient.FEIService.Career.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FEIService\FEIClient.FEIService.Procedure.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FEIService\FEIClient.FEIService.Student.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\FEIService\FEIClient.FEIService.Tutor.datasource">

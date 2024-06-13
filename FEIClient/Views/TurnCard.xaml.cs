@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FEIClient.FEIService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,26 @@ namespace FEIClient.Views
     /// </summary>
     public partial class TurnCard : UserControl
     {
+        private StudentClient studentClient;
+        private Student student;
         public TurnCard()
         {
             InitializeComponent();
+            studentClient = new StudentClient();
         }
 
-        internal void ConfigureTurnCardWindow(string item)
+        public void ConfigureTurnCardWindow(Appointment appointment)
         {
-            Label_Name.Content = item;
+            GetStudentNameById(appointment.student_IdStudent);
+            Label_Matricula.Content = appointment.student_IdStudent;
+            
+
+        }
+        
+        private void GetStudentNameById(string idStudent)
+        {
+            this.student = studentClient.GetStudentNameById(idStudent);
+            Label_Name.Content = student.fullName;
         }
     }
 }

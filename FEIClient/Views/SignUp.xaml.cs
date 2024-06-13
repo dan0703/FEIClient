@@ -87,6 +87,10 @@ namespace FEIClient.Views
                 {
                     if (IsValidMatricula(TextBox_Matricula.Text))
                     {
+                        if (TextBox_ShowPassword.Visibility == Visibility.Visible)
+                        {
+                            PasswordBox_Password.Password = TextBox_ShowPassword.Text;
+                        }
                         ViewStudentInfo studentInfo = new ViewStudentInfo()
                         {
                             password = Complements.EncryptPassword(PasswordBox_Password.Password),
@@ -95,6 +99,7 @@ namespace FEIClient.Views
                             idCareer = (int)ComboBox_EducationalProgram.SelectedValue,
                             idTutor = (int)ComboBox_Tutor.SelectedValue,
                         };
+
                         RegisterStudent(studentInfo);
                     }
                     else
