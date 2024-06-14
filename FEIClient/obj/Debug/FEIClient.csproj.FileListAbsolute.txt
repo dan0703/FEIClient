@@ -23,3 +23,5 @@ C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveShift.g.cs
 C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveShift.baml
 C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\TurnCard.g.cs
 C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\TurnCard.baml
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveAppointment.baml
+C:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveAppointment.g.cs

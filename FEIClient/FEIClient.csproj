@@ -71,6 +71,9 @@
     <Compile Include="Views\AppointmentRequest.xaml.cs">
       <DependentUpon>AppointmentRequest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LeaveAppointment.xaml.cs">
+      <DependentUpon>LeaveAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LeaveShift.xaml.cs">
       <DependentUpon>LeaveShift.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AppointmentRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LeaveAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

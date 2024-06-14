@@ -241,6 +241,12 @@
   <wsdl:message name="IAppointment_SetAppointments_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:SetAppointmentsResponse" />
   </wsdl:message>
+  <wsdl:message name="IAppointment_UpdateTimer_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTimer" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_UpdateTimer_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTimerResponse" />
+  </wsdl:message>
   <wsdl:message name="IProcedure_GetProcedureList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProcedureList" />
   </wsdl:message>
@@ -297,6 +303,10 @@
     <wsdl:operation name="SetAppointments">
       <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/SetAppointments" message="tns:IAppointment_SetAppointments_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/SetAppointmentsResponse" message="tns:IAppointment_SetAppointments_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimer">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/UpdateTimer" message="tns:IAppointment_UpdateTimer_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/UpdateTimerResponse" message="tns:IAppointment_UpdateTimer_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IProcedure">
@@ -410,6 +420,15 @@
     </wsdl:operation>
     <wsdl:operation name="SetAppointments">
       <soap12:operation soapAction="http://tempuri.org/IAppointment/SetAppointments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimer">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/UpdateTimer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

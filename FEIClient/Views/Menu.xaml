@@ -26,6 +26,7 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="6,163,5,4">
                     <StackPanel x:Name="StackPanel_TurnCardContainer" Background="WhiteSmoke" Margin="0,0,0,0" Width="364"/>
                 </ScrollViewer>
+                <Label x:Name="Label_Timer" Content="" FontSize="18" FontWeight="Bold"  Margin="224,120,0,706" HorizontalAlignment="Left" Width="150" />
 
             </Grid>
             <Label Content="Nombre" HorizontalAlignment="Left" Margin="51,293,0,0" VerticalAlignment="Top" FontSize="32" FontWeight="Bold"/>

@@ -1,0 +1,11 @@
+﻿<Window x:Class="FEIClient.Views.LeaveAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Razón para abandonar el turno" Height="200" Width="400">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="380" Text="Por favor, introduce la razón para abandonar el turno:"/>
+        <TextBox x:Name="ReasonTextBox" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" Height="101" Width="380"/>
+        <Button x:Name="Button_Accept" Content="Aceptar" HorizontalAlignment="Left" Margin="290,154,0,0" VerticalAlignment="Top" Width="100" FontSize="14" Background="#FF229C08" Foreground="White" Click="Button_Accept_Click"/>
+        <Button x:Name="Button_Cancel" Content="Cancelar" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top" Width="100" FontSize="14" Background="#FFFD3939" Foreground="White" Click="Button_Cancel_Click"/>
+    </Grid>
+</Window>

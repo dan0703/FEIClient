@@ -19,7 +19,10 @@ using System.Windows.Shapes;
 namespace FEIClient.Views
 {
     /// <summary>
-    /// Lógica de interacción para SignUp.xaml
+    /// Clase de lógica de interacción para la ventana de registro (SignUp.xaml).
+    /// Esta clase maneja los eventos y la lógica detrás de la interfaz de usuario
+    /// de la ventana de registro, incluyendo validaciones y comunicación con
+    /// el backend para registrar nuevos estudiantes.
     /// </summary>
     public partial class SignUp : Window
     {

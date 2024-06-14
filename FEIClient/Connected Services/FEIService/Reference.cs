@@ -869,6 +869,9 @@ namespace FEIClient.FEIService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/SetAppointments", ReplyAction="http://tempuri.org/IAppointment/SetAppointmentsResponse")]
         void SetAppointments(FEIClient.FEIService.Appointment[] appointments);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/UpdateTimer", ReplyAction="http://tempuri.org/IAppointment/UpdateTimerResponse")]
+        void UpdateTimer(System.TimeSpan elapsedTime);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

@@ -88,6 +88,33 @@ namespace FEIClient.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ya es tu turno, por favor pasa con la secretaria.
+        /// </summary>
+        internal static string MessageBox_Notification_YourTurn {
+            get {
+                return ResourceManager.GetString("MessageBox_Notification_YourTurn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Eres el proximo en pasar.
+        /// </summary>
+        internal static string MessageBox_Notification_YourTurnNext {
+            get {
+                return ResourceManager.GetString("MessageBox_Notification_YourTurnNext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu turno fue cancelado.
+        /// </summary>
+        internal static string MessageBox_Notification_YourTurnWasCanceled {
+            get {
+                return ResourceManager.GetString("MessageBox_Notification_YourTurnWasCanceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Credeciales incorrectas.
         /// </summary>
         internal static string MessageBox_SignIn_IncorrectCredentials {

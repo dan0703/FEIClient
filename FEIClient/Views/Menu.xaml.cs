@@ -24,6 +24,7 @@ namespace FEIClient.Views
     /// </summary>
     public partial class Menu : Window, IAppointmentCallback
     {
+        private bool allreadyHaveAppointment = false;
         private  AppointmentClient appointmentClient;
         private List<Appointment> appointmentList;
         private ViewStudentInfo student;
@@ -52,14 +53,17 @@ namespace FEIClient.Views
             catch (CommunicationException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
             catch (TimeoutException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
         }
 
@@ -84,9 +88,6 @@ namespace FEIClient.Views
         private void AddTurnCardsToGrid()
         {
             StackPanel_TurnCardContainer.Children.Clear();
-
-            bool isYourTurn = false;
-
             Label actualLabel = new Label
             {
                 Content = "Actual",
@@ -96,16 +97,21 @@ namespace FEIClient.Views
                 HorizontalAlignment = HorizontalAlignment.Left
             };
             StackPanel_TurnCardContainer.Children.Add(actualLabel);
-
+            if (appointmentList.Count==0)
+            {
+                allreadyHaveAppointment = false;
+            }
             for (int i = 0; i < appointmentList.Count; i++)
             {
-                if (appointmentList[i].student_IdStudent == student.idStudent && !isYourTurn)
+                if (appointmentList[i].student_IdStudent == student.idStudent && !allreadyHaveAppointment)
                 {
-                    Button_LeaveShift.IsEnabled = true;
-                    Button_AppointmentRequest.IsEnabled = false;
-                    Button_LeaveShift.Effect = null;
-                    Button_AppointmentRequest.Effect = new System.Windows.Media.Effects.BlurEffect();
-
+                    if (i == 1)
+                    {
+                        MessageBox.Show(Properties.Resources.MessageBox_Notification_YourTurnNext, "FEI", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    }else if (i == 0)
+                    {
+                        MessageBox.Show(Properties.Resources.MessageBox_Notification_YourTurn, "FEI", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    }
                     Label yourTurnLabel = new Label
                     {
                         Content = "Tu turno",
@@ -114,18 +120,11 @@ namespace FEIClient.Views
                         HorizontalAlignment = HorizontalAlignment.Center
                     };
                     StackPanel_TurnCardContainer.Children.Add(yourTurnLabel);
-                    isYourTurn = true;
+                    allreadyHaveAppointment = true;
                 }
-                else
-                {
-                    Button_LeaveShift.IsEnabled = false;
-                    Button_AppointmentRequest.IsEnabled = true;
-                    Button_AppointmentRequest.Effect = null;
-                    Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
+                
 
-                }
-
-                if (i == 1 && !isYourTurn)
+                if (i == 1 && !allreadyHaveAppointment)
                 {
                     Label siguienteLabel = new Label
                     {
@@ -136,6 +135,7 @@ namespace FEIClient.Views
                         HorizontalAlignment = HorizontalAlignment.Left
                     };
                     StackPanel_TurnCardContainer.Children.Add(siguienteLabel);
+                    
                 }
 
                 TurnCard turnCard = new TurnCard();
@@ -144,14 +144,60 @@ namespace FEIClient.Views
 
                 StackPanel_TurnCardContainer.Children.Add(turnCard);
             }
+            if (allreadyHaveAppointment)
+            {
+                Button_AppointmentRequest.IsEnabled = false;
+                Button_AppointmentRequest.Effect = new System.Windows.Media.Effects.BlurEffect();
+                Button_LeaveShift.IsEnabled = true;
+                Button_LeaveShift.Effect = null;
+            }
+            else
+            {
+                Button_AppointmentRequest.IsEnabled = true;
+                Button_AppointmentRequest.Effect = null;
+                Button_LeaveShift.IsEnabled = false;
+                Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
+            }
+        }
+        private void GoToLogIn()
+        {
+            Login loginWindow = new Login();
+            student = null;
+            Close();
+            loginWindow.ShowDialog();
         }
 
         private void Button_LogOut_Click(object sender, RoutedEventArgs e)
         {
-            Login loginWindow = new Login();
-            student=null;
-            Close();
-            loginWindow.ShowDialog();
+
+            MessageBoxResult result = MessageBox.Show("¿Deseas cerrar sesión?", "Cerrar Sesión", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                if (allreadyHaveAppointment)
+                {
+                    MessageBoxResult leaveShiftResult = MessageBox.Show("¿Deseas abandonar tu turno?", "Abandonar Turno", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                    if (leaveShiftResult == MessageBoxResult.Yes)
+                    {
+                        LeaveAppointment leaveApointmentBox = new LeaveAppointment();
+                        if (leaveApointmentBox.ShowDialog() == true)
+                        {
+                            string reason = leaveApointmentBox.Reason;
+                            LeaveAppointment(reason);
+                            GoToLogIn();
+                        }
+                    }
+                    else
+                    {
+                        GoToLogIn();
+                    }
+                }
+                else
+                {
+                    GoToLogIn();
+                }
+            }
         }
 
         private void Button_AppointmentRequest_Click(object sender, RoutedEventArgs e)
@@ -175,30 +221,32 @@ namespace FEIClient.Views
         {
             this.appointmentList = appointments.ToList();
             AddTurnCardsToGrid();
-
         }
 
         public void LeaveAppointment(string notAttendedReason)
         {
+            Button_AppointmentRequest.IsEnabled = true;
+            Button_AppointmentRequest.Effect = null;
+            Button_LeaveShift.IsEnabled = false;
+            Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
             try
             {
                 appointmentClient.LeaveAppointment(student.idStudent, notAttendedReason);
-                Button_AppointmentRequest.IsEnabled = true;
-                Button_AppointmentRequest.Effect = null;
-                Button_LeaveShift.IsEnabled = false;
-                Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
             }
             catch (CommunicationException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
             catch (TimeoutException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
         }
 
@@ -206,6 +254,10 @@ namespace FEIClient.Views
         {
             if (appointment != null)
             {
+                Button_AppointmentRequest.IsEnabled = false;
+                Button_AppointmentRequest.Effect = new System.Windows.Media.Effects.BlurEffect();
+                Button_LeaveShift.IsEnabled = true;
+                Button_LeaveShift.Effect = null;
                 try
                 {
                     appointmentClient.AppointmentRequest(appointment);
@@ -223,6 +275,16 @@ namespace FEIClient.Views
                     MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        public void UpdateTimer(TimeSpan elapsedTime)
+        {
+            string formattedTime = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                                         elapsedTime.Hours,
+                                         elapsedTime.Minutes,
+                                         elapsedTime.Seconds);
+
+            Label_Timer.Content = formattedTime;
         }
     }
 }

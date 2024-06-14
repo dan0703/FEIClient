@@ -126,6 +126,15 @@
   <data name="MessageBox_Error_ServiceException" xml:space="preserve">
     <value>El servicio no se encuentra disponible</value>
   </data>
+  <data name="MessageBox_Notification_YourTurn" xml:space="preserve">
+    <value>Ya es tu turno, por favor pasa con la secretaria</value>
+  </data>
+  <data name="MessageBox_Notification_YourTurnNext" xml:space="preserve">
+    <value>Eres el proximo en pasar</value>
+  </data>
+  <data name="MessageBox_Notification_YourTurnWasCanceled" xml:space="preserve">
+    <value>Tu turno fue cancelado</value>
+  </data>
   <data name="MessageBox_SignIn_IncorrectCredentials" xml:space="preserve">
     <value>Credeciales incorrectas</value>
   </data>
