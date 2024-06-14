@@ -286,5 +286,10 @@ namespace FEIClient.Views
 
             Label_Timer.Content = formattedTime;
         }
+
+        public void NotifyCancellation(string reason)
+        {
+            MessageBox.Show(reason,"Turno Cancelado",MessageBoxButton.OK,MessageBoxImage.Information);
+        }
     }
 }

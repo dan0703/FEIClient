@@ -433,7 +433,7 @@ namespace FEIClient.FEIService {
         private int durationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idApoointmentField;
+        private int idAppointmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string notAttendedReasonField;
@@ -484,14 +484,14 @@ namespace FEIClient.FEIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int idApoointment {
+        public int idAppointment {
             get {
-                return this.idApoointmentField;
+                return this.idAppointmentField;
             }
             set {
-                if ((this.idApoointmentField.Equals(value) != true)) {
-                    this.idApoointmentField = value;
-                    this.RaisePropertyChanged("idApoointment");
+                if ((this.idAppointmentField.Equals(value) != true)) {
+                    this.idAppointmentField = value;
+                    this.RaisePropertyChanged("idAppointment");
                 }
             }
         }
@@ -544,6 +544,304 @@ namespace FEIClient.FEIService {
                 if ((object.ReferenceEquals(this.student_IdStudentField, value) != true)) {
                     this.student_IdStudentField = value;
                     this.RaisePropertyChanged("student_IdStudent");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ViewStudentsQueueReport", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
+    [System.SerializableAttribute()]
+    public partial class ViewStudentsQueueReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime attendedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idAppointmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string idStudentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string studentNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime attendedDate {
+            get {
+                return this.attendedDateField;
+            }
+            set {
+                if ((this.attendedDateField.Equals(value) != true)) {
+                    this.attendedDateField = value;
+                    this.RaisePropertyChanged("attendedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idAppointment {
+            get {
+                return this.idAppointmentField;
+            }
+            set {
+                if ((this.idAppointmentField.Equals(value) != true)) {
+                    this.idAppointmentField = value;
+                    this.RaisePropertyChanged("idAppointment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string idStudent {
+            get {
+                return this.idStudentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.idStudentField, value) != true)) {
+                    this.idStudentField = value;
+                    this.RaisePropertyChanged("idStudent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((this.statusField.Equals(value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string studentName {
+            get {
+                return this.studentNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.studentNameField, value) != true)) {
+                    this.studentNameField = value;
+                    this.RaisePropertyChanged("studentName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ViewAppointment", Namespace="http://schemas.datacontract.org/2004/07/Domain")]
+    [System.SerializableAttribute()]
+    public partial class ViewAppointment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime attendedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int durationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fullNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idAppointmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idProcedureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string idStudentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idTutorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string procedureNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tutorNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime attendedDate {
+            get {
+                return this.attendedDateField;
+            }
+            set {
+                if ((this.attendedDateField.Equals(value) != true)) {
+                    this.attendedDateField = value;
+                    this.RaisePropertyChanged("attendedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int duration {
+            get {
+                return this.durationField;
+            }
+            set {
+                if ((this.durationField.Equals(value) != true)) {
+                    this.durationField = value;
+                    this.RaisePropertyChanged("duration");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string fullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fullNameField, value) != true)) {
+                    this.fullNameField = value;
+                    this.RaisePropertyChanged("fullName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idAppointment {
+            get {
+                return this.idAppointmentField;
+            }
+            set {
+                if ((this.idAppointmentField.Equals(value) != true)) {
+                    this.idAppointmentField = value;
+                    this.RaisePropertyChanged("idAppointment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idProcedure {
+            get {
+                return this.idProcedureField;
+            }
+            set {
+                if ((this.idProcedureField.Equals(value) != true)) {
+                    this.idProcedureField = value;
+                    this.RaisePropertyChanged("idProcedure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string idStudent {
+            get {
+                return this.idStudentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.idStudentField, value) != true)) {
+                    this.idStudentField = value;
+                    this.RaisePropertyChanged("idStudent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int idTutor {
+            get {
+                return this.idTutorField;
+            }
+            set {
+                if ((this.idTutorField.Equals(value) != true)) {
+                    this.idTutorField = value;
+                    this.RaisePropertyChanged("idTutor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string procedureName {
+            get {
+                return this.procedureNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.procedureNameField, value) != true)) {
+                    this.procedureNameField = value;
+                    this.RaisePropertyChanged("procedureName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((this.statusField.Equals(value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tutorName {
+            get {
+                return this.tutorNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tutorNameField, value) != true)) {
+                    this.tutorNameField = value;
+                    this.RaisePropertyChanged("tutorName");
                 }
             }
         }
@@ -857,6 +1155,36 @@ namespace FEIClient.FEIService {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/LeaveAppointment")]
         System.Threading.Tasks.Task LeaveAppointmentAsync(string studentId, string reason);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/CancelAppointment", ReplyAction="http://tempuri.org/IAppointment/CancelAppointmentResponse")]
+        void CancelAppointment(int idAppointment, string reason, string idStudent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/CancelAppointment", ReplyAction="http://tempuri.org/IAppointment/CancelAppointmentResponse")]
+        System.Threading.Tasks.Task CancelAppointmentAsync(int idAppointment, string reason, string idStudent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsAttendedResponse")]
+        void MarkAppointmentAsAttended(int idAppointment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsAttendedResponse")]
+        System.Threading.Tasks.Task MarkAppointmentAsAttendedAsync(int idAppointment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttendedResponse")]
+        void MarkAppointmentAsNotAttended(int idAppointment, string reason);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttendedResponse")]
+        System.Threading.Tasks.Task MarkAppointmentAsNotAttendedAsync(int idAppointment, string reason);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetStudentsQueueReport", ReplyAction="http://tempuri.org/IAppointment/GetStudentsQueueReportResponse")]
+        FEIClient.FEIService.ViewStudentsQueueReport[] GetStudentsQueueReport();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetStudentsQueueReport", ReplyAction="http://tempuri.org/IAppointment/GetStudentsQueueReportResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.ViewStudentsQueueReport[]> GetStudentsQueueReportAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetAppointmentReportByDate", ReplyAction="http://tempuri.org/IAppointment/GetAppointmentReportByDateResponse")]
+        FEIClient.FEIService.ViewAppointment[] GetAppointmentReportByDate(string date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetAppointmentReportByDate", ReplyAction="http://tempuri.org/IAppointment/GetAppointmentReportByDateResponse")]
+        System.Threading.Tasks.Task<FEIClient.FEIService.ViewAppointment[]> GetAppointmentReportByDateAsync(string date);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/JoinToSesion", ReplyAction="http://tempuri.org/IAppointment/JoinToSesionResponse")]
         void JoinToSesion(string idStudent);
         
@@ -872,6 +1200,9 @@ namespace FEIClient.FEIService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/UpdateTimer", ReplyAction="http://tempuri.org/IAppointment/UpdateTimerResponse")]
         void UpdateTimer(System.TimeSpan elapsedTime);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/NotifyCancellation", ReplyAction="http://tempuri.org/IAppointment/NotifyCancellationResponse")]
+        void NotifyCancellation(string reason);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -924,6 +1255,46 @@ namespace FEIClient.FEIService {
         
         public System.Threading.Tasks.Task LeaveAppointmentAsync(string studentId, string reason) {
             return base.Channel.LeaveAppointmentAsync(studentId, reason);
+        }
+        
+        public void CancelAppointment(int idAppointment, string reason, string idStudent) {
+            base.Channel.CancelAppointment(idAppointment, reason, idStudent);
+        }
+        
+        public System.Threading.Tasks.Task CancelAppointmentAsync(int idAppointment, string reason, string idStudent) {
+            return base.Channel.CancelAppointmentAsync(idAppointment, reason, idStudent);
+        }
+        
+        public void MarkAppointmentAsAttended(int idAppointment) {
+            base.Channel.MarkAppointmentAsAttended(idAppointment);
+        }
+        
+        public System.Threading.Tasks.Task MarkAppointmentAsAttendedAsync(int idAppointment) {
+            return base.Channel.MarkAppointmentAsAttendedAsync(idAppointment);
+        }
+        
+        public void MarkAppointmentAsNotAttended(int idAppointment, string reason) {
+            base.Channel.MarkAppointmentAsNotAttended(idAppointment, reason);
+        }
+        
+        public System.Threading.Tasks.Task MarkAppointmentAsNotAttendedAsync(int idAppointment, string reason) {
+            return base.Channel.MarkAppointmentAsNotAttendedAsync(idAppointment, reason);
+        }
+        
+        public FEIClient.FEIService.ViewStudentsQueueReport[] GetStudentsQueueReport() {
+            return base.Channel.GetStudentsQueueReport();
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.ViewStudentsQueueReport[]> GetStudentsQueueReportAsync() {
+            return base.Channel.GetStudentsQueueReportAsync();
+        }
+        
+        public FEIClient.FEIService.ViewAppointment[] GetAppointmentReportByDate(string date) {
+            return base.Channel.GetAppointmentReportByDate(date);
+        }
+        
+        public System.Threading.Tasks.Task<FEIClient.FEIService.ViewAppointment[]> GetAppointmentReportByDateAsync(string date) {
+            return base.Channel.GetAppointmentReportByDateAsync(date);
         }
         
         public void JoinToSesion(string idStudent) {

@@ -60,7 +60,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="attendedDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="duration" type="xs:int" />
-      <xs:element minOccurs="0" name="idApoointment" type="xs:int" />
+      <xs:element minOccurs="0" name="idAppointment" type="xs:int" />
       <xs:element minOccurs="0" name="notAttendedReason" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="procedure_IdProcedure" type="xs:int" />
       <xs:element minOccurs="0" name="status" type="xs:int" />
@@ -68,6 +68,43 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Appointment" nillable="true" type="tns:Appointment" />
+  <xs:complexType name="ArrayOfViewStudentsQueueReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewStudentsQueueReport" nillable="true" type="tns:ViewStudentsQueueReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewStudentsQueueReport" nillable="true" type="tns:ArrayOfViewStudentsQueueReport" />
+  <xs:complexType name="ViewStudentsQueueReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attendedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idAppointment" type="xs:int" />
+      <xs:element minOccurs="0" name="idStudent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:int" />
+      <xs:element minOccurs="0" name="studentName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewStudentsQueueReport" nillable="true" type="tns:ViewStudentsQueueReport" />
+  <xs:complexType name="ArrayOfViewAppointment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewAppointment" nillable="true" type="tns:ViewAppointment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewAppointment" nillable="true" type="tns:ArrayOfViewAppointment" />
+  <xs:complexType name="ViewAppointment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attendedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="duration" type="xs:int" />
+      <xs:element minOccurs="0" name="fullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idAppointment" type="xs:int" />
+      <xs:element minOccurs="0" name="idProcedure" type="xs:int" />
+      <xs:element minOccurs="0" name="idStudent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idTutor" type="xs:int" />
+      <xs:element minOccurs="0" name="procedureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:int" />
+      <xs:element minOccurs="0" name="tutorName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewAppointment" nillable="true" type="tns:ViewAppointment" />
   <xs:complexType name="ArrayOfProcedure">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Procedure" nillable="true" type="tns:Procedure" />

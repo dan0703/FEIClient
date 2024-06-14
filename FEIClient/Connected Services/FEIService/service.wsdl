@@ -229,6 +229,36 @@
   <wsdl:message name="IAppointment_LeaveAppointment_InputMessage">
     <wsdl:part name="parameters" element="tns:LeaveAppointment" />
   </wsdl:message>
+  <wsdl:message name="IAppointment_CancelAppointment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelAppointment" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_CancelAppointment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_MarkAppointmentAsAttended_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAppointmentAsAttended" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_MarkAppointmentAsAttended_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAppointmentAsAttendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_MarkAppointmentAsNotAttended_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAppointmentAsNotAttended" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_MarkAppointmentAsNotAttended_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAppointmentAsNotAttendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_GetStudentsQueueReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsQueueReport" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_GetStudentsQueueReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsQueueReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_GetAppointmentReportByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppointmentReportByDate" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_GetAppointmentReportByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppointmentReportByDateResponse" />
+  </wsdl:message>
   <wsdl:message name="IAppointment_JoinToSesion_InputMessage">
     <wsdl:part name="parameters" element="tns:JoinToSesion" />
   </wsdl:message>
@@ -246,6 +276,12 @@
   </wsdl:message>
   <wsdl:message name="IAppointment_UpdateTimer_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:UpdateTimerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_NotifyCancellation_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyCancellation" />
+  </wsdl:message>
+  <wsdl:message name="IAppointment_NotifyCancellation_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyCancellationResponse" />
   </wsdl:message>
   <wsdl:message name="IProcedure_GetProcedureList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProcedureList" />
@@ -296,6 +332,26 @@
     <wsdl:operation name="LeaveAppointment">
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/LeaveAppointment" message="tns:IAppointment_LeaveAppointment_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CancelAppointment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/CancelAppointment" message="tns:IAppointment_CancelAppointment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/CancelAppointmentResponse" message="tns:IAppointment_CancelAppointment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkAppointmentAsAttended">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended" message="tns:IAppointment_MarkAppointmentAsAttended_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttendedResponse" message="tns:IAppointment_MarkAppointmentAsAttended_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkAppointmentAsNotAttended">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended" message="tns:IAppointment_MarkAppointmentAsNotAttended_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttendedResponse" message="tns:IAppointment_MarkAppointmentAsNotAttended_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsQueueReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/GetStudentsQueueReport" message="tns:IAppointment_GetStudentsQueueReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/GetStudentsQueueReportResponse" message="tns:IAppointment_GetStudentsQueueReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentReportByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/GetAppointmentReportByDate" message="tns:IAppointment_GetAppointmentReportByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/GetAppointmentReportByDateResponse" message="tns:IAppointment_GetAppointmentReportByDate_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="JoinToSesion">
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/JoinToSesion" message="tns:IAppointment_JoinToSesion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/JoinToSesionResponse" message="tns:IAppointment_JoinToSesion_OutputMessage" />
@@ -307,6 +363,10 @@
     <wsdl:operation name="UpdateTimer">
       <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/UpdateTimer" message="tns:IAppointment_UpdateTimer_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/UpdateTimerResponse" message="tns:IAppointment_UpdateTimer_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyCancellation">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppointment/NotifyCancellation" message="tns:IAppointment_NotifyCancellation_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppointment/NotifyCancellationResponse" message="tns:IAppointment_NotifyCancellation_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IProcedure">
@@ -409,6 +469,51 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="CancelAppointment">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/CancelAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkAppointmentAsAttended">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/MarkAppointmentAsAttended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkAppointmentAsNotAttended">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsQueueReport">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/GetStudentsQueueReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppointmentReportByDate">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/GetAppointmentReportByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="JoinToSesion">
       <soap12:operation soapAction="http://tempuri.org/IAppointment/JoinToSesion" style="document" />
       <wsdl:input>
@@ -429,6 +534,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateTimer">
       <soap12:operation soapAction="http://tempuri.org/IAppointment/UpdateTimer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyCancellation">
+      <soap12:operation soapAction="http://tempuri.org/IAppointment/NotifyCancellation" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
