@@ -126,7 +126,13 @@
     <None Include="Connected Services\FEIService\FEIClient.FEIService.Tutor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\FEIService\FEIClient.FEIService.ViewAppointment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\FEIService\FEIClient.FEIService.ViewStudentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\FEIService\FEIClient.FEIService.ViewStudentsQueueReport.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\FEIService\service.wsdl" />
