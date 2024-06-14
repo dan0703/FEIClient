@@ -178,7 +178,7 @@ namespace FEIClient.Views
                 {
                     MessageBoxResult leaveShiftResult = MessageBox.Show("¿Deseas abandonar tu turno?", "Abandonar Turno", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-                    if (leaveShiftResult == MessageBoxResult.Yes)
+                    if (leaveShiftResult == MessageBoxResult.No)
                     {
                         LeaveAppointment leaveApointmentBox = new LeaveAppointment();
                         if (leaveApointmentBox.ShowDialog() == true)
@@ -289,7 +289,7 @@ namespace FEIClient.Views
 
         public void NotifyCancellation(string reason)
         {
-            MessageBox.Show(reason,"Turno Cancelado",MessageBoxButton.OK,MessageBoxImage.Information);
+            MessageBox.Show("Tu cita ha sido cancelada, \nRazón: " + reason,"Turno Cancelado",MessageBoxButton.OK,MessageBoxImage.Information);
         }
     }
 }

@@ -47,11 +47,16 @@ namespace FEIClient.Views
             GetCareerList();
         }
 
+        private void GoToLogIn()
+        {
+            Login loginWindow = new Login();
+            Close();
+            loginWindow.ShowDialog();
+        }
+
         private void Button_Login_Click(object sender, RoutedEventArgs e)
         {
-            var logInWindow = new Login();
-            Close();
-            logInWindow.ShowDialog();
+            GoToLogIn();
         }
         private void RegisterStudent(ViewStudentInfo student)
         {
@@ -71,14 +76,17 @@ namespace FEIClient.Views
             catch (CommunicationException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
             catch (TimeoutException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                GoToLogIn();
             }
         }
 
@@ -108,9 +116,7 @@ namespace FEIClient.Views
                     else
                     {
                         MessageBox.Show(Properties.Resources.MessageBox_SingUp_BadMatricula, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
-
                     }
-
                 }
                 else
                 {
