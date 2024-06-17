@@ -1156,10 +1156,10 @@ namespace FEIClient.FEIService {
         System.Threading.Tasks.Task LeaveAppointmentAsync(string studentId, string reason);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/CancelAppointment", ReplyAction="http://tempuri.org/IAppointment/CancelAppointmentResponse")]
-        void CancelAppointment(int idAppointment, string reason, string idStudent);
+        void CancelAppointment(int idAppointment, string reason);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/CancelAppointment", ReplyAction="http://tempuri.org/IAppointment/CancelAppointmentResponse")]
-        System.Threading.Tasks.Task CancelAppointmentAsync(int idAppointment, string reason, string idStudent);
+        System.Threading.Tasks.Task CancelAppointmentAsync(int idAppointment, string reason);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsAttendedResponse")]
         void MarkAppointmentAsAttended(int idAppointment);
@@ -1180,10 +1180,10 @@ namespace FEIClient.FEIService {
         System.Threading.Tasks.Task<FEIClient.FEIService.ViewStudentsQueueReport[]> GetStudentsQueueReportAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetAppointmentReportByDate", ReplyAction="http://tempuri.org/IAppointment/GetAppointmentReportByDateResponse")]
-        FEIClient.FEIService.ViewAppointment[] GetAppointmentReportByDate(string date);
+        FEIClient.FEIService.ViewAppointment[] GetAppointmentReportByDate(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetAppointmentReportByDate", ReplyAction="http://tempuri.org/IAppointment/GetAppointmentReportByDateResponse")]
-        System.Threading.Tasks.Task<FEIClient.FEIService.ViewAppointment[]> GetAppointmentReportByDateAsync(string date);
+        System.Threading.Tasks.Task<FEIClient.FEIService.ViewAppointment[]> GetAppointmentReportByDateAsync(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/JoinToSesion", ReplyAction="http://tempuri.org/IAppointment/JoinToSesionResponse")]
         void JoinToSesion(string idStudent);
@@ -1257,12 +1257,12 @@ namespace FEIClient.FEIService {
             return base.Channel.LeaveAppointmentAsync(studentId, reason);
         }
         
-        public void CancelAppointment(int idAppointment, string reason, string idStudent) {
-            base.Channel.CancelAppointment(idAppointment, reason, idStudent);
+        public void CancelAppointment(int idAppointment, string reason) {
+            base.Channel.CancelAppointment(idAppointment, reason);
         }
         
-        public System.Threading.Tasks.Task CancelAppointmentAsync(int idAppointment, string reason, string idStudent) {
-            return base.Channel.CancelAppointmentAsync(idAppointment, reason, idStudent);
+        public System.Threading.Tasks.Task CancelAppointmentAsync(int idAppointment, string reason) {
+            return base.Channel.CancelAppointmentAsync(idAppointment, reason);
         }
         
         public void MarkAppointmentAsAttended(int idAppointment) {
@@ -1289,11 +1289,11 @@ namespace FEIClient.FEIService {
             return base.Channel.GetStudentsQueueReportAsync();
         }
         
-        public FEIClient.FEIService.ViewAppointment[] GetAppointmentReportByDate(string date) {
+        public FEIClient.FEIService.ViewAppointment[] GetAppointmentReportByDate(System.DateTime date) {
             return base.Channel.GetAppointmentReportByDate(date);
         }
         
-        public System.Threading.Tasks.Task<FEIClient.FEIService.ViewAppointment[]> GetAppointmentReportByDateAsync(string date) {
+        public System.Threading.Tasks.Task<FEIClient.FEIService.ViewAppointment[]> GetAppointmentReportByDateAsync(System.DateTime date) {
             return base.Channel.GetAppointmentReportByDateAsync(date);
         }
         

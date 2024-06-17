@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="282bbc64-ceb2-4518-aece-4a502eded9df" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="34428ea5-7502-4838-a768-b2046f7e99ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.1.84:8082/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://192.168.1.85:8082/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a869e195-75ac-43d0-b578-7fbb391e41a6" SourceId="1" SourceUrl="http://192.168.1.84:8082/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="6aed267f-aa80-43c6-b4b7-a7068c6db52c" SourceId="1" SourceUrl="http://192.168.1.84:8082/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ed99ea65-1ead-4cf9-b300-1497847d9a3c" SourceId="1" SourceUrl="http://192.168.1.84:8082/mex" />
-    <MetadataFile FileName="Domain.xsd" MetadataType="Schema" ID="a60bcd32-82d6-47da-a3a3-a4fbf82e7b9d" SourceId="1" SourceUrl="http://192.168.1.84:8082/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="dcdedc76-d144-4af5-b170-f4e6e0e18aef" SourceId="1" SourceUrl="http://192.168.1.85:8082/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="835baec2-882b-4daa-8f79-e32adbbcf36c" SourceId="1" SourceUrl="http://192.168.1.85:8082/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e4bd1570-e1ff-4952-aa8d-7af56ba73e79" SourceId="1" SourceUrl="http://192.168.1.85:8082/mex" />
+    <MetadataFile FileName="Domain.xsd" MetadataType="Schema" ID="bfd9a38f-fc81-4d25-9856-0c0be4920dee" SourceId="1" SourceUrl="http://192.168.1.85:8082/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -29,6 +29,7 @@ namespace FEIClient.Views
         private List<Appointment> appointmentList;
         private ViewStudentInfo student;
         private  TutorClient tutorClient;
+        private bool AllreadyInAppointment = false;
         public Menu()
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace FEIClient.Views
                 Label_StudentId.Content = student.idStudent;
                 appointmentClient.JoinToSesion(student.idStudent);
                 GetAppointmentList();
-                AddTurnCardsToGrid();
+                AddTurnCardsToGridStackPanel();
             }
             catch (CommunicationException ex)
             {
@@ -85,65 +86,81 @@ namespace FEIClient.Views
             appointmentList = appointmentClient.GetAllAppointments().ToList();
         }
 
-        private void AddTurnCardsToGrid()
+        private void ConfigureAllreadyHaveAppointmentFlag()
         {
-            StackPanel_TurnCardContainer.Children.Clear();
-            Label actualLabel = new Label
+            if (appointmentList.Count>0)
             {
-                Content = "Actual",
-                FontSize = 22,
-                FontWeight = FontWeights.Bold,
-                Margin = new Thickness(6, 0, 0, 10),
-                HorizontalAlignment = HorizontalAlignment.Left
-            };
-            StackPanel_TurnCardContainer.Children.Add(actualLabel);
-            if (appointmentList.Count==0)
+                for (int i = 0; i < appointmentList.Count; i++)
+                {
+                    if (appointmentList[i].student_IdStudent == student.idStudent)
+                    {
+                        allreadyHaveAppointment = true;
+                        break;
+                    }
+                    else
+                    {
+                        allreadyHaveAppointment = false;
+                    }
+                }
+            }
+            else
             {
                 allreadyHaveAppointment = false;
             }
+        }
+
+        private void AddTurnCardsToGridStackPanel()
+        {
+            StackPanel_TurnCardContainer.Children.Clear();
+            InsertTagToStackPanel("Actual: ");
+            ConfigureAllreadyHaveAppointmentFlag();
+
+            bool isMyTurn = false;
             for (int i = 0; i < appointmentList.Count; i++)
             {
-                if (appointmentList[i].student_IdStudent == student.idStudent && !allreadyHaveAppointment)
+                if (!isMyTurn && appointmentList[i].student_IdStudent == student.idStudent )
                 {
-                    if (i == 1)
+                    if (i == 1 )
                     {
                         MessageBox.Show(Properties.Resources.MessageBox_Notification_YourTurnNext, "FEI", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                    }else if (i == 0)
+                    }
+                    else if (i == 0 && !AllreadyInAppointment)
                     {
                         MessageBox.Show(Properties.Resources.MessageBox_Notification_YourTurn, "FEI", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        AllreadyInAppointment = true;
+
                     }
-                    Label yourTurnLabel = new Label
-                    {
-                        Content = "Tu turno",
-                        FontSize = 18,
-                        Margin = new Thickness(6, 20, 0, 10),
-                        HorizontalAlignment = HorizontalAlignment.Center
-                    };
-                    StackPanel_TurnCardContainer.Children.Add(yourTurnLabel);
-                    allreadyHaveAppointment = true;
+                    InsertTagToStackPanel("Tu turno");
+                    isMyTurn = true;
                 }
                 
-
-                if (i == 1 && !allreadyHaveAppointment)
+                if (i == 1 && !isMyTurn)
                 {
-                    Label siguienteLabel = new Label
-                    {
-                        Content = "Siguiente: ",
-                        FontSize = 22,
-                        FontWeight = FontWeights.Bold,
-                        Margin = new Thickness(6, 20, 0, 20),
-                        HorizontalAlignment = HorizontalAlignment.Left
-                    };
-                    StackPanel_TurnCardContainer.Children.Add(siguienteLabel);
-                    
+                    InsertTagToStackPanel("Siguiente: ");
                 }
 
                 TurnCard turnCard = new TurnCard();
                 turnCard.ConfigureTurnCardWindow(appointmentList[i]);
                 turnCard.Margin = new Thickness(0, 0, 0, 20); 
-
                 StackPanel_TurnCardContainer.Children.Add(turnCard);
             }
+            ConfigureRequestAndLeaveButtons();
+        }
+
+        private void InsertTagToStackPanel(string text)
+        {
+             Label yourTurnLabel = new Label
+                    {
+                        Content = text,
+                        FontSize = 18,
+                        Margin = new Thickness(6, 20, 0, 10),
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    };
+                    StackPanel_TurnCardContainer.Children.Add(yourTurnLabel);
+        }
+
+        private void ConfigureRequestAndLeaveButtons()
+        {
             if (allreadyHaveAppointment)
             {
                 Button_AppointmentRequest.IsEnabled = false;
@@ -220,7 +237,7 @@ namespace FEIClient.Views
         public void SetAppointments(Appointment[] appointments)
         {
             this.appointmentList = appointments.ToList();
-            AddTurnCardsToGrid();
+            AddTurnCardsToGridStackPanel();
         }
 
         public void LeaveAppointment(string notAttendedReason)
@@ -232,6 +249,7 @@ namespace FEIClient.Views
             try
             {
                 appointmentClient.LeaveAppointment(student.idStudent, notAttendedReason);
+                AllreadyInAppointment = false;
             }
             catch (CommunicationException ex)
             {
