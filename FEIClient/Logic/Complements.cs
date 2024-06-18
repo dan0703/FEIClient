@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FEIClient.FEIService;
+using FEIClient.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -21,6 +23,11 @@ namespace FEIClient.Logic
                 }
                 return hash.ToString();
             }
+        }
+        public static void GoToLogIn()
+        {
+            Login loginWindow = new Login();
+            loginWindow.ShowDialog();
         }
     }
 }

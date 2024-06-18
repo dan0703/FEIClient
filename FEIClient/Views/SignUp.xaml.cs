@@ -1,5 +1,6 @@
 ﻿using FEIClient.FEIService;
 using FEIClient.Logic;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace FEIClient.Views
     /// </summary>
     public partial class SignUp : Window
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Login));
+
         private TutorClient tutorClient;
         private CareerClient careerClient;
         private StudentClient studentClient;
@@ -69,23 +72,27 @@ namespace FEIClient.Views
                 }
                 else
                 {
-                    MessageBox.Show(Properties.Resources.MessageBox_Error_RegisterError, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show(Properties.Resources.MessageBox_SingUp_MatriculaAllreadyRegister, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
             }
             catch (CommunicationException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                log.Error(ex);
                 GoToLogIn();
             }
             catch (TimeoutException ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                log.Error(ex);
                 GoToLogIn();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                log.Error(ex);
+
                 GoToLogIn();
             }
         }
@@ -159,7 +166,16 @@ namespace FEIClient.Views
         }
         private bool IsValidMatricula(string matricula)
         {
-            return Regex.IsMatch(matricula, @"^zs\d{8}$");
+            try
+            {
+                var match = Regex.Match(matricula, @"^zs\d{8}$", RegexOptions.None, TimeSpan.FromSeconds(1));
+                return match.Success;
+            }
+            catch (RegexMatchTimeoutException ex)
+            {
+                log.Error(ex);
+                return false;
+            }
         }
 
 
@@ -199,25 +215,44 @@ namespace FEIClient.Views
 
         }
 
+        /// <summary>
+        /// Verifica si una contraseña es válida según las reglas establecidas:
+        /// - Debe tener al menos 8 caracteres.
+        /// - Debe contener al menos un dígito.
+        /// - Debe contener al menos un carácter especial.
+        /// </summary>
+        /// <param name="password">La contraseña a validar.</param>
+        /// <returns>Devuelve true si la contraseña es válida; de lo contrario, false.</returns>
         private bool IsPasswordValid(string password)
         {
             bool isValid = true;
-            if (password.Length < 8)
-            {
-                isValid= false;
-            }
 
-            if (!Regex.IsMatch(password, @"\d"))
+            // Verifica si la longitud de la contraseña es al menos de 8 caracteres
+            if (password.Length < 8)
             {
                 isValid = false;
             }
 
-            if (!Regex.IsMatch(password, @"[^\w\d]"))
+            try
             {
+                if (!Regex.Match(password, @"\d", RegexOptions.None, TimeSpan.FromSeconds(1)).Success)
+                {
+                    isValid = false;
+                }
+
+                if (!Regex.Match(password, @"[^\w\d]", RegexOptions.None, TimeSpan.FromSeconds(1)).Success)
+                {
+                    isValid = false;
+                }
+            }
+            catch (RegexMatchTimeoutException ex)
+            {
+                log.Error(ex);
                 isValid = false;
             }
 
             return isValid;
         }
+
     }
 }

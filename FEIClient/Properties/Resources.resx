@@ -145,6 +145,9 @@
     <value>Por favor, ingrese una contraseña que contenga mínimo 8 caracteres, al menos un numero y
  un símbolo</value>
   </data>
+  <data name="MessageBox_SingUp_MatriculaAllreadyRegister" xml:space="preserve">
+    <value>Esta matricula ya se encuentra registrada, por favor, intenta con otra</value>
+  </data>
   <data name="MessageBox_Success_RegisterSucessfull" xml:space="preserve">
     <value>El registro se ha completado con exito</value>
   </data>

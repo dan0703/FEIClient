@@ -118,21 +118,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CancelAppointmentResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="MarkAppointmentAsAttended">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="idAppointment" type="xs:int" />
       </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="MarkAppointmentAsAttendedResponse">
-    <xs:complexType>
-      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="MarkAppointmentAsNotAttended">
@@ -141,11 +131,6 @@
         <xs:element minOccurs="0" name="idAppointment" type="xs:int" />
         <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
       </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="MarkAppointmentAsNotAttendedResponse">
-    <xs:complexType>
-      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetStudentsQueueReport">
@@ -179,11 +164,6 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="idStudent" nillable="true" type="xs:string" />
       </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="JoinToSesionResponse">
-    <xs:complexType>
-      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="SetAppointments">

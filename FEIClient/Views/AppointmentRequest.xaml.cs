@@ -1,5 +1,6 @@
 ﻿using FEIClient.FEIService;
 using FEIClient.Logic;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace FEIClient.Views
     /// </summary>
     public partial class AppointmentRequest : Window
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Login));
         ProcedureClient procedureClient;
         private Menu _menuWindow;
         private ViewStudentInfo student;
@@ -31,7 +33,16 @@ namespace FEIClient.Views
             _menuWindow = menu;
             procedureClient = new ProcedureClient();
         }
+        private void GoToLogIn()
+        {
+            Complements.GoToLogIn();
+            this.Close();
+        }
 
+        private void ShowMessageBoxServiceExceptionError()
+        {
+            MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
 
         internal void ConfigureWindowVariables(ViewStudentInfo student)
         {
@@ -55,17 +66,22 @@ namespace FEIClient.Views
             }
             catch (CommunicationException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+                GoToLogIn();
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+                GoToLogIn();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+                GoToLogIn();
             }
-
         }
 
         private void Button_AcceptRequest_Click(object sender, RoutedEventArgs e)
@@ -75,7 +91,7 @@ namespace FEIClient.Views
                 Appointment appointment = new Appointment()
                 {
                     attendedDate = DateTime.Now,
-                    status = Constants.Pending,
+                    status = (int)AppointmentStatus.Pending,
                     student_IdStudent = student.idStudent,
                     procedure_IdProcedure = (int)ComboBox_Procedure.SelectedValue
                 };

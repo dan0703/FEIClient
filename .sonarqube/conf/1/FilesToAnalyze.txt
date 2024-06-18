@@ -1,0 +1,39 @@
+﻿C:\Users\danse\source\repos\FEIClient\FEIClient\App.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\App.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Logic\Complements.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Logic\AppointmentStatus.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\AppointmentRequest.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\LeaveAppointment.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\LeaveShift.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\Login.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\Menu.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\SignUp.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\TurnCard.xaml.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Properties\AssemblyInfo.cs
+C:\Users\danse\source\repos\FEIClient\FEIClient\Properties\Resources.resx
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\Domain.xsd
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.Appointment.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.Career.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.Procedure.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.Student.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.Tutor.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.ViewAppointment.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.ViewStudentInfo.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\FEIClient.FEIService.ViewStudentsQueueReport.datasource
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\service.wsdl
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\service.xsd
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\service1.xsd
+C:\Users\danse\source\repos\FEIClient\FEIClient\packages.config
+C:\Users\danse\source\repos\FEIClient\FEIClient\Properties\Settings.settings
+C:\Users\danse\source\repos\FEIClient\FEIClient\App.config
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\configuration91.svcinfo
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\configuration.svcinfo
+C:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\Reference.svcmap
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\AppointmentRequest.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\LeaveAppointment.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\LeaveShift.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\Login.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\Menu.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\SignUp.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\TurnCard.xaml
+C:\Users\danse\source\repos\FEIClient\FEIClient\Views\Images\LogoFEI.png

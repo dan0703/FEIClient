@@ -1155,22 +1155,22 @@ namespace FEIClient.FEIService {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/LeaveAppointment")]
         System.Threading.Tasks.Task LeaveAppointmentAsync(string studentId, string reason);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/CancelAppointment", ReplyAction="http://tempuri.org/IAppointment/CancelAppointmentResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/CancelAppointment")]
         void CancelAppointment(int idAppointment, string reason);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/CancelAppointment", ReplyAction="http://tempuri.org/IAppointment/CancelAppointmentResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/CancelAppointment")]
         System.Threading.Tasks.Task CancelAppointmentAsync(int idAppointment, string reason);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsAttendedResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended")]
         void MarkAppointmentAsAttended(int idAppointment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsAttendedResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/MarkAppointmentAsAttended")]
         System.Threading.Tasks.Task MarkAppointmentAsAttendedAsync(int idAppointment);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttendedResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended")]
         void MarkAppointmentAsNotAttended(int idAppointment, string reason);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended", ReplyAction="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttendedResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/MarkAppointmentAsNotAttended")]
         System.Threading.Tasks.Task MarkAppointmentAsNotAttendedAsync(int idAppointment, string reason);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetStudentsQueueReport", ReplyAction="http://tempuri.org/IAppointment/GetStudentsQueueReportResponse")]
@@ -1185,10 +1185,10 @@ namespace FEIClient.FEIService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/GetAppointmentReportByDate", ReplyAction="http://tempuri.org/IAppointment/GetAppointmentReportByDateResponse")]
         System.Threading.Tasks.Task<FEIClient.FEIService.ViewAppointment[]> GetAppointmentReportByDateAsync(System.DateTime date);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/JoinToSesion", ReplyAction="http://tempuri.org/IAppointment/JoinToSesionResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/JoinToSesion")]
         void JoinToSesion(string idStudent);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointment/JoinToSesion", ReplyAction="http://tempuri.org/IAppointment/JoinToSesionResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAppointment/JoinToSesion")]
         System.Threading.Tasks.Task JoinToSesionAsync(string idStudent);
     }
     

@@ -1,0 +1,24 @@
+w
+lC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.csutf-8M
+BC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\App.g.csutf-8X
+MC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\TurnCard.g.csutf-8V
+KC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\SignUp.g.csutf-8T
+IC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\Menu.g.csutf-8U
+JC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\Login.g.csutf-8Z
+OC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveShift.g.csutf-8`
+UC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\LeaveAppointment.g.csutf-8b
+WC:\Users\danse\source\repos\FEIClient\FEIClient\obj\Debug\Views\AppointmentRequest.g.csutf-8Z
+OC:\Users\danse\source\repos\FEIClient\FEIClient\Properties\Settings.Designer.csutf-8[
+PC:\Users\danse\source\repos\FEIClient\FEIClient\Properties\Resources.Designer.csutf-8S
+JC:\Users\danse\source\repos\FEIClient\FEIClient\Properties\AssemblyInfo.csutf-8M
+DC:\Users\danse\source\repos\FEIClient\FEIClient\Views\SignUp.xaml.csutf-8O
+FC:\Users\danse\source\repos\FEIClient\FEIClient\Views\TurnCard.xaml.csutf-8K
+BC:\Users\danse\source\repos\FEIClient\FEIClient\Views\Menu.xaml.csutf-8L
+CC:\Users\danse\source\repos\FEIClient\FEIClient\Views\Login.xaml.csutf-8Q
+HC:\Users\danse\source\repos\FEIClient\FEIClient\Views\LeaveShift.xaml.csutf-8W
+NC:\Users\danse\source\repos\FEIClient\FEIClient\Views\LeaveAppointment.xaml.csutf-8Y
+PC:\Users\danse\source\repos\FEIClient\FEIClient\Views\AppointmentRequest.xaml.csutf-8S
+JC:\Users\danse\source\repos\FEIClient\FEIClient\Logic\AppointmentStatus.csutf-8M
+DC:\Users\danse\source\repos\FEIClient\FEIClient\Logic\Complements.csutf-8e
+ZC:\Users\danse\source\repos\FEIClient\FEIClient\Connected Services\FEIService\Reference.csutf-8D
+;C:\Users\danse\source\repos\FEIClient\FEIClient\App.xaml.csutf-8

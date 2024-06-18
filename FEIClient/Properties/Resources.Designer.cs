@@ -143,6 +143,15 @@ namespace FEIClient.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Esta matricula ya se encuentra registrada, por favor, intenta con otra.
+        /// </summary>
+        internal static string MessageBox_SingUp_MatriculaAllreadyRegister {
+            get {
+                return ResourceManager.GetString("MessageBox_SingUp_MatriculaAllreadyRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El registro se ha completado con exito.
         /// </summary>
         internal static string MessageBox_Success_RegisterSucessfull {

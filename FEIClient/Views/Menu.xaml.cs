@@ -1,4 +1,6 @@
 ﻿using FEIClient.FEIService;
+using FEIClient.Logic;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,8 @@ namespace FEIClient.Views
     /// </summary>
     public partial class Menu : Window, IAppointmentCallback
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Login));
+
         private bool allreadyHaveAppointment = false;
         private  AppointmentClient appointmentClient;
         private List<Appointment> appointmentList;
@@ -53,17 +57,22 @@ namespace FEIClient.Views
             }
             catch (CommunicationException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+
                 GoToLogIn();
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
                 GoToLogIn();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+
                 GoToLogIn();
             }
         }
@@ -76,7 +85,10 @@ namespace FEIClient.Views
                 tutorName = tutorClient.GetTutorById(idTutor).fullName;
             }catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+                GoToLogIn();
+
             }
             return tutorName;
         }
@@ -150,13 +162,13 @@ namespace FEIClient.Views
         private void InsertTagToStackPanel(string text)
         {
              Label yourTurnLabel = new Label
-                    {
-                        Content = text,
-                        FontSize = 18,
-                        Margin = new Thickness(6, 20, 0, 10),
-                        HorizontalAlignment = HorizontalAlignment.Center
-                    };
-                    StackPanel_TurnCardContainer.Children.Add(yourTurnLabel);
+             {
+                Content = text,
+                FontSize = 18,
+                Margin = new Thickness(6, 20, 0, 10),
+                HorizontalAlignment = HorizontalAlignment.Center
+             };
+             StackPanel_TurnCardContainer.Children.Add(yourTurnLabel);
         }
 
         private void ConfigureRequestAndLeaveButtons()
@@ -176,12 +188,16 @@ namespace FEIClient.Views
                 Button_LeaveShift.Effect = new System.Windows.Media.Effects.BlurEffect();
             }
         }
+
         private void GoToLogIn()
         {
-            Login loginWindow = new Login();
-            student = null;
-            Close();
-            loginWindow.ShowDialog();
+            Complements.GoToLogIn();
+            this.Close();
+        }
+
+        private void ShowMessageBoxServiceExceptionError()
+        {
+            MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void Button_LogOut_Click(object sender, RoutedEventArgs e)
@@ -253,17 +269,20 @@ namespace FEIClient.Views
             }
             catch (CommunicationException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
                 GoToLogIn();
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
                 GoToLogIn();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
                 GoToLogIn();
             }
         }
@@ -282,15 +301,24 @@ namespace FEIClient.Views
                 }
                 catch (CommunicationException ex)
                 {
-                    MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowMessageBoxServiceExceptionError();
+                    log.Error(ex);
+                    GoToLogIn();
+
                 }
                 catch (TimeoutException ex)
                 {
-                    MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowMessageBoxServiceExceptionError();
+                    log.Error(ex);
+                    GoToLogIn();
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowMessageBoxServiceExceptionError();
+                    log.Error(ex);
+                    GoToLogIn();
+
                 }
             }
         }

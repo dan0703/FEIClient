@@ -1,5 +1,6 @@
 ﻿using FEIClient.FEIService;
 using FEIClient.Logic;
+using log4net;
 using System;
 using System.ServiceModel;
 using System.Windows;
@@ -12,12 +13,17 @@ namespace FEIClient.Views
     /// </summary>
     public partial class Login : Window
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Login));
         private ViewStudentInfoClient studentInfoClient;
         public Login()
         {
             InitializeComponent();
             studentInfoClient = new ViewStudentInfoClient();
 
+        }
+        private void ShowMessageBoxServiceExceptionError()
+        {
+            MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void Button_ShowPassword_Click(object sender, RoutedEventArgs e)
@@ -55,17 +61,22 @@ namespace FEIClient.Views
             }          
             catch (CommunicationException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
             }
-            
+
         }
         private bool IsUserOrPasswordEmpty()
         {
@@ -102,15 +113,26 @@ namespace FEIClient.Views
             }
             catch (CommunicationException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message);
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+
             }
             catch (TimeoutException ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message);
+
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message);
+
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+
             }
         }
     }

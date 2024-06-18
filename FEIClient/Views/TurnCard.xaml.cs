@@ -1,7 +1,9 @@
 ﻿using FEIClient.FEIService;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,6 +22,8 @@ namespace FEIClient.Views
     /// </summary>
     public partial class TurnCard : UserControl
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(Login));
+
         private StudentClient studentClient;
         private Student student;
         public TurnCard()
@@ -28,11 +32,54 @@ namespace FEIClient.Views
             studentClient = new StudentClient();
         }
 
+        private void ShowMessageBoxServiceExceptionError()
+        {
+            MessageBox.Show(Properties.Resources.MessageBox_Error_ServiceException, "FEI", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void GoToLogIn()
+        {
+            Login loginWindow = new Login();
+            student = null;
+
+            Window parentWindow = Window.GetWindow(this);
+            if (parentWindow != null)
+            {
+                parentWindow.Close();
+            }
+
+            loginWindow.ShowDialog();
+        }
+
         public void ConfigureTurnCardWindow(Appointment appointment)
         {
-            GetStudentNameById(appointment.student_IdStudent);
-            Label_Matricula.Content = appointment.student_IdStudent;
-            
+            try
+            {
+                GetStudentNameById(appointment.student_IdStudent);
+                Label_Matricula.Content = appointment.student_IdStudent;
+            }
+            catch (CommunicationException ex)
+            {
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+                GoToLogIn();
+
+            }
+            catch (TimeoutException ex)
+            {
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+                GoToLogIn();
+
+            }
+            catch (Exception ex)
+            {
+                ShowMessageBoxServiceExceptionError();
+                log.Error(ex);
+                GoToLogIn();
+
+            }
+
 
         }
         
